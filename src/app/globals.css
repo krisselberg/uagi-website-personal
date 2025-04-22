@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 30 20% 95%;
+    --card: 0 0% 0%;
+    --card-foreground: 30 20% 95%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 30 20% 95%;
+    --primary: 30 20% 95%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 30 20% 95%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 30 10% 70%;
+    --accent: 30 40% 40%;
+    --accent-foreground: 30 20% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 30 20% 95%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 30 20% 50%;
+    --radius: 0rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  html {
+    @apply leading-tight;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-color: #000000;
+  }
+
+  header, main, footer {
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-normal;
+  }
+
+  p, span, a, button, input, textarea {
+  }
+}
+
+.dot-field-background {
+  position: relative;
+}
+
+.dot-field-background::before {
+  content: '';
+  position: absolute;
+  top: 100;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url('/dot-field.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.8;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.container {
+  @apply mx-auto px-4 md:px-6 max-w-[1400px];
+}
+
+.gradient-overlay::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 40s linear infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.star {
+}
+
+.star-1 {
+  animation: twinkle 2s linear infinite;
+}
+
+.star-2 {
+  animation: twinkle 1.5s linear infinite 0.3s;
+}
+
+.star-3 {
+  animation: twinkle 2.5s linear infinite 0.6s;
+}
+
+@keyframes glow-pulse {
+  0% { box-shadow: 0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3); }
+  50% { box-shadow: 0 4px 20px rgba(123, 216, 230, 0.7), 0 0 30px rgba(179, 235, 242, 0.5); }
+  100% { box-shadow: 0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3); }
+}
+
+.hover\:shadow-glow:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(5px, 3px) scale(1.01); }
+  50% { transform: translate(-3px, 6px) scale(1); }
+  75% { transform: translate(2px, -4px) scale(1.01); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.purple-haze {
+  animation: drift 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.background-mask-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, hsl(var(--background)) 5%, transparent);
+  z-index: 0;
+  pointer-events: none;
+}

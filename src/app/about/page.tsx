@@ -12,7 +12,7 @@ export default function AboutPage() {
       name: "Ameer Haj Ali",
       title: "CEO & Founder",
       image: "/ameer_30u30.jpeg",
-      bio: "Ameer Haj Ali is a Forbes 30 Under 30 honoree and accomplished AI researcher with a PhD from UC Berkeley. His groundbreaking work in machine learning and compiler optimization has been recognized in top-tier conferences and journals. As the founder of UniversalAGI, Ameer is dedicated to building enterprise-grade AI solutions that bridge the gap between cutting-edge research and practical business applications."
+      bio: "Ameer Haj Ali is a Forbes 30 Under 30 honoree and accomplished AI researcher with a PhD from UC Berkeley, which he notably completed in a record two years – the fastest in the program's history. His groundbreaking work in machine learning and compiler optimization has been recognized in top-tier conferences and journals. As the founder of UniversalAGI, Ameer is dedicated to building enterprise-grade AI solutions that bridge the gap between cutting-edge research and practical business applications."
     }
   ];
 
@@ -42,7 +42,7 @@ export default function AboutPage() {
   return (
     <PageLayout>
       {/* Space background for the entire page */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="fixed inset-0 w-full h-screen">
         <SpaceBackground starCount={300} speed={0.5} />
       </div>
       

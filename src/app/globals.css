@@ -72,6 +72,10 @@
     background-color: #000000;
   }
 
+  html, body {
+    @apply h-full;
+  }
+
   header, main, footer {
   }
 

@@ -100,7 +100,7 @@ export function JoinTeam() {
       ];
       
     return (
-        <section id="join-team" className="w-full py-16 sm:py-24 md:py-32 lg:py-40 relative overflow-hidden bg-black/70 z-10">
+        <section id="join-team" className="w-full py-16 sm:py-24 md:py-32 lg:py-40 relative overflow-hidden z-10">
             {/* Content */}
             <div className="container max-w-6xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
                 <div className="text-center mb-8 sm:mb-12 md:mb-16">
@@ -177,7 +177,7 @@ export function JoinTeam() {
                                 transform: "translateX(-50%)"
                             }} className="overflow-visible">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 rounded-2xl border border-gray-800 backdrop-blur-sm bg-black/40 overflow-hidden">
-                                    <div className="flex flex-col px-5 sm:px-6 md:px-8 py-5 sm:py-6 h-full relative border-b sm:border-b md:border-b-0 sm:border-r border-gray-800/50">
+                                    <div className="flex flex-col px-5 sm:px-6 md:px-8 py-5 sm:py-6 h-full relative border-b sm:border-b md:border-b-0 sm:border-r-0 border-gray-800/50">
                                         <div>
                                             <svg className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#B3EBF2] mb-3 sm:mb-4 opacity-60" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
@@ -191,7 +191,7 @@ export function JoinTeam() {
                                         <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-4/5 bg-gray-700/50"></div>
                                     </div>
                                     
-                                    <div className="flex flex-col px-5 sm:px-6 md:px-8 py-5 sm:py-6 h-full relative border-b md:border-b-0 sm:border-r border-gray-800/50">
+                                    <div className="flex flex-col px-5 sm:px-6 md:px-8 py-5 sm:py-6 h-full relative border-b md:border-b-0 sm:border-r-0 border-gray-800/50">
                                         <div>
                                             <svg className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#B3EBF2] mb-3 sm:mb-4 opacity-60" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>

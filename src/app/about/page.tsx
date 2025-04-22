@@ -42,7 +42,7 @@ export default function AboutPage() {
   return (
     <PageLayout>
       {/* Space background for the entire page */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="fixed inset-0 w-full h-screen">
         <SpaceBackground starCount={300} speed={0.5} />
       </div>
       

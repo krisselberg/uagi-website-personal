@@ -47,7 +47,7 @@ export function HeroSection() {
                     <Button 
                         className="rounded-full bg-black/90 text-white hover:bg-black/80 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-semibold border border-gray-400/20"
                     >
-                        <a href="/careers">Careers</a>
+                        <a href="/#join-team">Careers</a>
                     </Button>
                 </div>
             </div>

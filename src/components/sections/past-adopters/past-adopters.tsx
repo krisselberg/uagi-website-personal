@@ -17,7 +17,7 @@ interface CardData {
 
 export function PastAdopters() {
     // State to control the width of the cards section - matches other sections
-    const [cardsWidth, setCardsWidth] = useState("120%");
+    const [cardsWidth, setCardsWidth] = useState("110%"); // Slightly reduced for better mobile experience
     
     const cards = [
         {
@@ -68,9 +68,9 @@ export function PastAdopters() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
                 
                 {/* Icon */}
-                <div className="absolute top-8 right-8">
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{backgroundColor: data.accentColor}}>
-                        <svg className="w-7 h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center" style={{backgroundColor: data.accentColor}}>
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             {data.iconName === "building-skyscraper" ? (
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                             ) : (
@@ -82,10 +82,10 @@ export function PastAdopters() {
                 
                 {/* Title overlay with larger size */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full z-10">
-                    <h3 className="text-5xl font-medium text-white mb-3 drop-shadow-lg">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-2 sm:mb-3 drop-shadow-lg">
                         {data.title}
                     </h3>
-                    <div className="text-sm uppercase tracking-wider font-medium px-4 py-1 rounded-full inline-block" style={{backgroundColor: data.accentColor, color: "#000000"}}>
+                    <div className="text-xs sm:text-sm uppercase tracking-wider font-medium px-3 py-1 sm:px-4 sm:py-1 rounded-full inline-block" style={{backgroundColor: data.accentColor, color: "#000000"}}>
                         {data.category}
                     </div>
                 </div>
@@ -93,34 +93,34 @@ export function PastAdopters() {
                 {/* Decorative elements */}
                 <div className="absolute w-full h-full">
                     {/* Animated gradient circles */}
-                    <div className="absolute top-[15%] left-[20%] w-32 h-32 rounded-full opacity-40 blur-2xl animate-pulse" style={{backgroundColor: data.accentColor}}></div>
-                    <div className="absolute bottom-[25%] right-[10%] w-48 h-48 rounded-full opacity-30 blur-3xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "1.5s"}}></div>
-                    <div className="absolute top-[60%] left-[60%] w-24 h-24 rounded-full opacity-20 blur-xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "0.7s"}}></div>
+                    <div className="absolute top-[15%] left-[20%] w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 rounded-full opacity-40 blur-2xl animate-pulse" style={{backgroundColor: data.accentColor}}></div>
+                    <div className="absolute bottom-[25%] right-[10%] w-28 sm:w-36 md:w-48 h-28 sm:h-36 md:h-48 rounded-full opacity-30 blur-3xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "1.5s"}}></div>
+                    <div className="absolute top-[60%] left-[60%] w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 rounded-full opacity-20 blur-xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "0.7s"}}></div>
                 </div>
             </div>
             
             {/* Text section */}
-            <div className="flex-1 flex flex-col p-8 bg-[#000000] relative">
-                <p className="text-gray-300 text-lg mb-6">
+            <div className="flex-1 flex flex-col p-5 sm:p-6 md:p-8 bg-[#000000] relative">
+                <p className="text-gray-300 text-base sm:text-lg mb-4 sm:mb-6">
                     {data.description}
                 </p>
                 
                 {/* Case studies list */}
-                <div className="space-y-3 mb-16">
-                    <h4 className="text-lg font-medium text-white mb-4">Case Studies:</h4>
+                <div className="space-y-2 sm:space-y-3 mb-12 sm:mb-16">
+                    <h4 className="text-base sm:text-lg font-medium text-white mb-2 sm:mb-4">Case Studies:</h4>
                     {data.caseStudies.map((study, index) => (
                         <div key={index} className="flex items-start">
-                            <div style={{color: data.accentColor}} className="mr-3 mt-1">•</div>
-                            <p className="text-gray-400 flex-1">{study}</p>
+                            <div style={{color: data.accentColor}} className="mr-2 sm:mr-3 mt-1">•</div>
+                            <p className="text-gray-400 text-sm sm:text-base flex-1">{study}</p>
                         </div>
                     ))}
                 </div>
                 
                 {/* Button at the bottom - positioned absolutely */}
-                <div className="absolute bottom-8 right-8">
-                    <button className="flex items-center text-sm hover:text-white transition-colors duration-300 group-hover:underline" style={{color: data.accentColor}}>
+                <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8">
+                    <button className="flex items-center text-xs sm:text-sm hover:text-white transition-colors duration-300 group-hover:underline" style={{color: data.accentColor}}>
                         View all case studies
-                        <svg className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </button>
@@ -130,22 +130,22 @@ export function PastAdopters() {
     );
     
     return (
-        <section className="w-full py-32 relative z-10">
-            <div className="container relative z-10">
+        <section className="w-full py-16 sm:py-24 md:py-32 relative z-10">
+            <div className="container px-4 sm:px-6 md:px-8 relative z-10">
                 <FadeInSection>
-                    <h2 className="text-6xl font-medium mb-6 text-center">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 text-center">
                         Our Clients
                     </h2>
                 </FadeInSection>
                 
                 <FadeInSection delay={200}>
-                    <p className="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-16">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto text-center mb-10 sm:mb-16">
                         Delivering enterprise-grade AI solutions across sectors
                     </p>
                 </FadeInSection>
                 
                 {/* Grid layout for cards */}
-                <div className="relative w-full mx-auto mb-16 overflow-visible">
+                <div className="relative w-full mx-auto mb-10 sm:mb-16 overflow-visible">
                     <div className="flex justify-center relative">
                         <div style={{ 
                             width: cardsWidth, 
@@ -154,7 +154,7 @@ export function PastAdopters() {
                             left: "50%",
                             transform: "translateX(-50%)"
                         }} className="overflow-visible">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
                                 {cards.map((card, index) => (
                                     <FadeInSection key={index} delay={400 + index * 200}>
                                         <Card data={card} />

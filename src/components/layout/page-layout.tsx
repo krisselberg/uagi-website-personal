@@ -13,9 +13,14 @@ export function PageLayout({ children }: PageLayoutProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Check if space background already exists to prevent duplicates
-    const existingBackground = document.getElementById('global-space-background');
-    setIsMounted(!existingBackground);
+    // Small delay to ensure DOM is fully loaded before checking
+    const timer = setTimeout(() => {
+      // Check if space background already exists to prevent duplicates
+      const existingBackground = document.getElementById('global-space-background');
+      setIsMounted(!existingBackground);
+    }, 10);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (

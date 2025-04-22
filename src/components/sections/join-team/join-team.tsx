@@ -224,7 +224,7 @@ export function JoinTeam() {
                 
                 <FadeInSection delay={400}>
                     <div className="flex justify-center mt-16">
-                        <Link href="/careers">
+                        <Link href="https://jobs.ashbyhq.com/universalagi">
                             <Button 
                                 className="rounded-full text-black/90 text-lg px-8 py-6 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
                                 style={{ 

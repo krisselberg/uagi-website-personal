@@ -88,9 +88,9 @@ export default function AboutPage() {
             
             <div className="flex justify-center">
               <FadeInSection>
-                <Card className="group max-w-2xl rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
+                <Card className="group max-w-3xl rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
                   <div className="flex flex-col md:flex-row">
-                    <div className="relative w-full md:w-2/5 h-80 md:h-auto overflow-hidden">
+                    <div className="relative w-full md:w-1/2 h-80 md:h-auto overflow-hidden">
                       <Image 
                         src={leadershipTeam[0].image}
                         alt={leadershipTeam[0].name}
@@ -99,7 +99,7 @@ export default function AboutPage() {
                         className="transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <div className="p-8 md:w-3/5">
+                    <div className="p-8 md:w-1/2">
                       <h3 className="text-2xl font-medium mb-2 text-white group-hover:text-[#B3EBF2] transition-colors duration-300">
                         {leadershipTeam[0].name}
                       </h3>

@@ -6,9 +6,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="w-full py-16 bg-black/90 border-t border-gray-800">
+    <footer className="w-full py-10 bg-black/90 border-t border-gray-800">
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
           {/* Logo and company info */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="inline-block mb-6">
@@ -51,37 +51,34 @@ export function Footer() {
           
           {/* Quick Links */}
           <div className="col-span-1">
-            <h3 className="text-white font-medium text-lg mb-6">Product</h3>
-            <ul className="space-y-3">
+            <h3 className="text-white font-medium text-lg mb-4">Product</h3>
+            <ul className="space-y-2">
               <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Features</Link></li>
               <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Use Cases</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Pricing</Link></li>
               <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Security</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">API</Link></li>
             </ul>
           </div>
           
           {/* Company */}
           <div className="col-span-1">
-            <h3 className="text-white font-medium text-lg mb-6">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="text-white font-medium text-lg mb-4">Company</h3>
+            <ul className="space-y-2">
               <li><Link href="/about" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">About Us</Link></li>
               <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Blog</Link></li>
               <li><Link href="/#join-team" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Careers</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Press</Link></li>
               <li><Link href="#" className="text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Partners</Link></li>
             </ul>
           </div>
           
           {/* Contact */}
           <div className="col-span-1">
-            <h3 className="text-white font-medium text-lg mb-6">Contact</h3>
-            <ul className="space-y-3">
+            <h3 className="text-white font-medium text-lg mb-4">Contact</h3>
+            <ul className="space-y-2">
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-[#B3EBF2] mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                <span className="text-gray-400">contact@universalagi.com</span>
+                <span className="text-gray-400">contact@universalagi.ai</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-[#B3EBF2] mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -92,23 +89,14 @@ export function Footer() {
               </li>
             </ul>
             
-            {/* Newsletter Signup */}
-            <div className="mt-8">
-              <h4 className="text-white text-sm font-medium mb-3">Subscribe to our newsletter</h4>
-              <div className="flex">
-                <input type="email" placeholder="Enter your email" className="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-l-md flex-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#B3EBF2]/50" />
-                <button className="bg-[#B3EBF2] text-black px-4 py-2 rounded-r-md font-medium text-sm hover:bg-[#7dd8e6] transition-colors duration-300">
-                  Subscribe
-                </button>
-              </div>
-            </div>
+
           </div>
         </div>
 
-        <Separator className="bg-gray-800 mb-8" />
+        <Separator className="bg-gray-800 mb-4" />
 
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+          <p className="text-gray-500 text-sm mb-2 md:mb-0">
             © {currentYear} UniversalAGI. All rights reserved.
           </p>
           <div className="flex space-x-6">

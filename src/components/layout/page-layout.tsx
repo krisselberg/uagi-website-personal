@@ -26,7 +26,9 @@ export function PageLayout({ children }: PageLayoutProps) {
       <main className="flex-grow pt-20 relative z-10">
         {children}
       </main>
-      <Footer />
+      <div className="relative z-20">
+        <Footer />
+      </div>
     </div>
   );
 }

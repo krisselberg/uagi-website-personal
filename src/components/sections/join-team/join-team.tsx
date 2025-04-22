@@ -186,10 +186,7 @@ export function JoinTeam() {
                                                 "I learned more here in one week than I did in years at previous jobs."
                                             </p>
                                         </div>
-                                        <div className="mt-auto">
-                                            <p className="text-white font-medium">Cole Lindeman</p>
-                                            <p className="text-gray-400 text-sm">Head of Operations</p>
-                                        </div>
+
                                         {/* Vertical divider for desktop */}
                                         <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-4/5 bg-gray-700/50"></div>
                                     </div>
@@ -203,10 +200,7 @@ export function JoinTeam() {
                                                 "At UniversalAGI, I've developed my skills beyond the purely technical, moving towards leadership roles."
                                             </p>
                                         </div>
-                                        <div className="mt-auto">
-                                            <p className="text-white font-medium">Kristoffer Selberg</p>
-                                            <p className="text-gray-400 text-sm">Member of Technical Staff</p>
-                                        </div>
+
                                         {/* Vertical divider for desktop */}
                                         <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-4/5 bg-gray-700/50"></div>
                                     </div>
@@ -220,10 +214,7 @@ export function JoinTeam() {
                                                 "I was hired based on my potential beyond my existing technical skills. The team actively invests in developing that potential and takes chances on promising candidates."
                                             </p>
                                         </div>
-                                        <div className="mt-auto">
-                                            <p className="text-white font-medium">Diego Prestamo</p>
-                                            <p className="text-gray-400 text-sm">Software Engineer</p>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>

@@ -33,7 +33,7 @@ export function Header() {
   
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 w-full py-3 md:py-4 bg-black/100 backdrop-blur-sm transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 w-full py-3 md:py-6 lg:py-8 bg-black/100 backdrop-blur-sm transition-all duration-300"
       style={{
         // Remove hard border and replace with just a shadow for a softer look
         boxShadow: `0 4px 12px -6px rgba(60, 70, 80, ${shadowOpacity}), 0 1px 3px rgba(75, 85, 99, ${borderOpacity})`,
@@ -75,14 +75,14 @@ export function Header() {
         </button>
 
         {/* Navigation items - Desktop */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link href="/about" className="text-gray-100 hover:text-white transition-colors text-base font-semibold">
+        <div className="hidden md:flex items-center space-x-10 lg:space-x-14">
+          <Link href="/about" className="text-gray-100 hover:text-white transition-colors text-base text-xl font-regular">
             About Us
           </Link>
-          <Link href="/request-demo" className="text-gray-100 hover:text-white transition-colors text-base font-semibold">
+          <Link href="/request-demo" className="text-gray-100 hover:text-white transition-colors text-base text-xl font-regular">
             Demo
           </Link>
-          <Link href="/#join-team" className="text-gray-100 hover:text-white transition-colors text-base font-semibold">
+          <Link href="/#join-team" className="text-gray-100 hover:text-white transition-colors text-base text-xl font-regular">
             Careers
           </Link>
         </div>

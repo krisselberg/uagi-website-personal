@@ -75,7 +75,7 @@ export function Header() {
         </button>
 
         {/* Navigation items - Desktop */}
-        <div className="hidden md:flex items-center space-x-10 lg:space-x-14">
+        <div className="hidden md:flex items-center space-x-10 lg:space-x-12">
           <Link href="/about" className="text-gray-100 hover:text-white transition-colors text-base text-xl font-regular">
             About Us
           </Link>

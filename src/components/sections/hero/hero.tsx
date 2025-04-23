@@ -19,7 +19,7 @@ export function HeroSection() {
                         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                 >
-                    AI Agents Built for Enterprise and Government
+                    AI Agents for Enterprise and Government
                 </h1>
                 <p 
                     className={`text-xl sm:text-2xl md:text-3xl text-foreground mb-8 sm:mb-10 max-w-3xl mx-auto text-center transition-all duration-1000 transform ${

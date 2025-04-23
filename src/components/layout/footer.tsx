@@ -21,7 +21,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm mb-4 md:mb-6 max-w-xs">
-              Accelerating enterprise AI adoption with best-in-class technology and expertise.
+              AI Agents Built for Enterprise and Government 
             </p>
             
             {/* Contact info moved here */}

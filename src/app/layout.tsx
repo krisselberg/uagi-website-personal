@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   title: "UniversalAGI",
   description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
   icons: {
-    icon: "/uagi-logo.svg",
+    icon: "/logos/uagi-icon.svg",
   },
 };
 

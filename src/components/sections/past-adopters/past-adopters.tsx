@@ -24,11 +24,11 @@ export function PastAdopters() {
         {
             title: "Enterprise",
             category: "Private Sector",
-            description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage. Our intelligent AI agents transform your data into your most powerful asset:",
+            description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage. Our intelligent AI agents transform your data into your most powerful asset.",
             caseStudies: [
-                "Technology",
-                "Finance", 
-                "Healthcare"
+                "<strong>Unlock Predictive Insights:</strong> Deploy AI agents to analyze complex datasets, revealing hidden patterns and forecasting future trends.",
+                "<strong>Sharpen Decision-Making:</strong> Convert raw data into actionable intelligence, empowering faster, more strategic business choices.",
+                "<strong>Accelerate Performance:</strong> Leverage AI-driven analytics to optimize operations, identify opportunities, and gain a decisive competitive edge."
             ],
             gradientFrom: "blue-500/40",
             gradientTo: "indigo-800/60",
@@ -40,9 +40,9 @@ export function PastAdopters() {
             category: "Public Sector",
             description: "Our secure, compliant AI solutions help government agencies modernize operations and better serve citizens.",
             caseStudies: [
-                "Federal",
-                "International",
-                "Defense"
+                "<strong>Generate Actionable Analytics:</strong> Utilize AI agents to process vast government data, extracting clear insights for mission-critical tasks.",
+                "<strong>Boost Operational Efficiency:</strong> Drive significant improvements in resource allocation and process optimization through data-driven intelligence.",
+                "<strong>Enhance Strategic Foresight:</strong> Empower agencies with predictive analytics and deep insights for smarter policy-making and improved public outcomes."
             ],
             gradientFrom: "purple-500/40",
             gradientTo: "violet-800/60",
@@ -100,17 +100,20 @@ export function PastAdopters() {
             
             {/* Text section */}
             <div className="flex-1 flex flex-col p-5 sm:p-6 md:p-8 bg-[#000000] relative">
-                <p className="text-gray-300 text-base sm:text-lg mb-4 sm:mb-6">
-                    {data.description}
-                </p>
+                {/* Fixed height container for description */}
+                <div className="h-[120px] mb-4 sm:mb-6">
+                    <p className="text-gray-300 text-base sm:text-lg">
+                        {data.description}
+                    </p>
+                </div>
                 
-                {/* Key sectors list */}
+                {/* Capabilities list - now independent of description height */}
                 <div className="space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-                    <h4 className="text-base sm:text-lg font-medium text-white mb-2 sm:mb-4">Key Sectors:</h4>
+                    <h4 className="text-base sm:text-lg font-medium text-white mb-2 sm:mb-4 border-b border-gray-800 pb-2">Capabilities:</h4>
                     {data.caseStudies.map((study, index) => (
                         <div key={index} className="flex items-start">
                             <div style={{color: data.accentColor}} className="mr-2 sm:mr-3 mt-1">•</div>
-                            <p className="text-gray-400 text-sm sm:text-base flex-1">{study}</p>
+                            <p className="text-gray-400 text-sm sm:text-base flex-1" dangerouslySetInnerHTML={{ __html: study }}></p>
                         </div>
                     ))}
                 </div>

@@ -159,7 +159,7 @@ export function JoinTeam() {
                                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 rounded-xl bg-black/20 overflow-hidden">
                                             <div className="flex flex-col px-5 py-5 h-full relative">
                                                 <div>
-                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#B3EBF2] mb-3 opacity-60" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#7dd8e6] mb-3 opacity-80" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
                                                     </svg>
                                                     <p className="text-sm sm:text-base text-gray-300">
@@ -170,7 +170,7 @@ export function JoinTeam() {
                                             
                                             <div className="flex flex-col px-5 py-5 h-full relative">
                                                 <div>
-                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#B3EBF2] mb-3 opacity-60" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#7dd8e6] mb-3 opacity-80" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
                                                     </svg>
                                                     <p className="text-sm sm:text-base text-gray-300">
@@ -181,7 +181,7 @@ export function JoinTeam() {
                                             
                                             <div className="flex flex-col px-5 py-5 h-full relative">
                                                 <div>
-                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#B3EBF2] mb-3 opacity-60" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#7dd8e6] mb-3 opacity-80" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
                                                     </svg>
                                                     <p className="text-sm sm:text-base text-gray-300">

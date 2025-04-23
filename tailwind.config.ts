@@ -20,7 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         inter: ["var(--font-inter)"],
-        sans: ['var(--font-outfit)'],
+        sans: ['var(--font-dm-mono)'],
       },
       colors: {
         border: "hsl(var(--border))",

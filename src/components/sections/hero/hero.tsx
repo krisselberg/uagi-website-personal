@@ -15,14 +15,14 @@ export function HeroSection() {
             {/* Content */}
             <div className="container flex flex-col items-center justify-center relative z-10 pt-12 sm:pt-16 md:pt-24">
                 <h1 
-                    className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 sm:mb-8 md:mb-10 max-w-4xl mx-auto text-center text-foreground transition-all duration-1000 transform ${
+                    className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 sm:mb-8 md:mb-10 max-w-6xl mx-auto text-center text-foreground transition-all duration-1000 transform ${
                         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                 >
                     AI Agents for Enterprise and Government
                 </h1>
                 <p 
-                    className={`text-xl sm:text-2xl md:text-3xl text-foreground mb-8 sm:mb-10 max-w-3xl mx-auto text-center transition-all duration-1000 transform ${
+                    className={`text-base sm:text-xl md:text-2xl text-foreground mb-8 sm:mb-10 max-w-6xl mx-auto text-center transition-all duration-1000 transform ${
                         isLoaded ? 'opacity-70 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                     style={{ transitionDelay: '300ms' }}
@@ -45,7 +45,7 @@ export function HeroSection() {
                         <a href="/request-demo">Request a Demo</a>
                     </Button>
                     <Button 
-                        className="rounded-full bg-black/90 text-white hover:bg-black/80 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-semibold border border-gray-400/20"
+                        className="rounded-full bg-black/90 text-white hover:bg-black/80 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-regular border border-gray-400/20"
                     >
                         <a href="/#join-team">Careers</a>
                     </Button>

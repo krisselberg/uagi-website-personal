@@ -1,6 +1,7 @@
 'use client'
 
-import Image from "next/image";
+import Link from "next/link";
+import { Card } from "@/components/ui/card";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { useState } from "react";
 
@@ -25,10 +26,9 @@ export function PastAdopters() {
             category: "Private Sector",
             description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage.",
             caseStudies: [
-                "Fortune 500 tech companies use our AI solutions to optimize operations",
-                "Financial services firms leverage our models for risk assessment",
-                "Healthcare providers implement our solutions for improved patient outcomes",
-                "Media companies utilize our technology for content generation and moderation"
+                "Technology",
+                "Finance", 
+                "Healthcare"
             ],
             gradientFrom: "blue-500/40",
             gradientTo: "indigo-800/60",
@@ -40,10 +40,9 @@ export function PastAdopters() {
             category: "Public Sector",
             description: "Our secure, compliant AI solutions help government agencies modernize operations and better serve citizens.",
             caseStudies: [
-                "Federal agencies implement our AI for document processing automation",
-                "State governments use our solutions for citizen service optimization",
-                "Defense departments leverage our technology for data analysis",
-                "Public health agencies deploy our AI for research acceleration"
+                "Federal",
+                "International",
+                "Defense"
             ],
             gradientFrom: "purple-500/40",
             gradientTo: "violet-800/60",
@@ -105,9 +104,9 @@ export function PastAdopters() {
                     {data.description}
                 </p>
                 
-                {/* Case studies list */}
+                {/* Key sectors list */}
                 <div className="space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-                    <h4 className="text-base sm:text-lg font-medium text-white mb-2 sm:mb-4">Case Studies:</h4>
+                    <h4 className="text-base sm:text-lg font-medium text-white mb-2 sm:mb-4">Key Sectors:</h4>
                     {data.caseStudies.map((study, index) => (
                         <div key={index} className="flex items-start">
                             <div style={{color: data.accentColor}} className="mr-2 sm:mr-3 mt-1">•</div>
@@ -119,7 +118,7 @@ export function PastAdopters() {
                 {/* Button at the bottom - positioned absolutely */}
                 <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8">
                     <button className="flex items-center text-xs sm:text-sm hover:text-white transition-colors duration-300 group-hover:underline" style={{color: data.accentColor}}>
-                        View all case studies
+                        Learn more
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>

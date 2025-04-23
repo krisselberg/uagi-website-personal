@@ -124,13 +124,22 @@ export default function AboutPage() {
                   <span className="text-white text-lg font-medium">Elad Gil</span>
                 </div>
                 <div className="w-40 h-16 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
+                  <span className="text-white text-lg font-medium">Jared Kushner</span>
+                </div>
+                <div className="w-40 h-16 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
+                  <span className="text-white text-lg font-medium">David Patterson</span>
+                </div>
+                <div className="w-40 h-16 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
                   <span className="text-white text-lg font-medium">Eric Schmidt</span>
                 </div>
+              </div>
+              
+              <div className="flex flex-wrap justify-center items-center gap-10 mt-10">
                 <div className="w-40 h-16 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
                   <span className="text-white text-lg font-medium">Ion Stoica</span>
                 </div>
                 <div className="w-40 h-16 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
-                  <span className="text-white text-lg font-medium">David Patterson</span>
+                  <span className="text-white text-lg font-medium">Ivanka Trump</span>
                 </div>
               </div>
             </div>

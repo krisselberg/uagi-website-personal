@@ -114,16 +114,6 @@ export function PastAdopters() {
                         </div>
                     ))}
                 </div>
-                
-                {/* Button at the bottom - positioned absolutely */}
-                <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8">
-                    <button className="flex items-center text-xs sm:text-sm hover:text-white transition-colors duration-300 group-hover:underline" style={{color: data.accentColor}}>
-                        Learn more
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
             </div>
         </div>
     );

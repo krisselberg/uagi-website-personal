@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="w-full py-6 md:py-10 bg-black/90 border-t border-gray-800">
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 mb-8 md:mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-2 mb-8 md:mb-6">
           {/* Logo and company info */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-4 md:mb-6">
@@ -23,6 +23,25 @@ export function Footer() {
             <p className="text-gray-400 text-sm mb-4 md:mb-6 max-w-xs">
               Accelerating enterprise AI adoption with best-in-class technology and expertise.
             </p>
+            
+            {/* Contact info moved here */}
+            <div className="mb-4 md:mb-6">
+              <ul className="space-y-2 md:space-y-2">
+                <li className="flex items-start">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-[#B3EBF2] mr-2 md:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  <span className="text-sm md:text-base text-gray-400">contact@universalagi.ai</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-[#B3EBF2] mr-2 md:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                  <span className="text-sm md:text-base text-gray-400">San Francisco, CA</span>
+                </li>
+              </ul>
+            </div>
             
             {/* Social Media Icons */}
             <div className="flex space-x-3 md:space-x-4">
@@ -49,44 +68,13 @@ export function Footer() {
             </div>
           </div>
           
-          {/* Quick Links */}
-          <div className="col-span-1">
-            <h3 className="text-white font-medium text-base md:text-lg mb-3 md:mb-4">Product</h3>
-            <ul className="space-y-2 md:space-y-2">
-              <li><Link href="#" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Features</Link></li>
-              <li><Link href="#" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Use Cases</Link></li>
-              <li><Link href="#" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Security</Link></li>
-            </ul>
-          </div>
-          
           {/* Company */}
           <div className="col-span-1">
             <h3 className="text-white font-medium text-base md:text-lg mb-3 md:mb-4">Company</h3>
             <ul className="space-y-2 md:space-y-2">
               <li><Link href="/about" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">About Us</Link></li>
-              <li><Link href="#" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Blog</Link></li>
+              <li><Link href="#" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Demo</Link></li>
               <li><Link href="/#join-team" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Careers</Link></li>
-              <li><Link href="#" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Partners</Link></li>
-            </ul>
-          </div>
-          
-          {/* Contact */}
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="text-white font-medium text-base md:text-lg mb-3 md:mb-4">Contact</h3>
-            <ul className="space-y-2 md:space-y-2">
-              <li className="flex items-start">
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-[#B3EBF2] mr-2 md:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-                <span className="text-sm md:text-base text-gray-400">contact@universalagi.ai</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-[#B3EBF2] mr-2 md:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <span className="text-sm md:text-base text-gray-400">San Francisco, CA</span>
-              </li>
             </ul>
           </div>
         </div>

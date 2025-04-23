@@ -22,20 +22,12 @@ export default function AboutPage() {
       description: "We design our systems to augment human capabilities, not replace them. Our AI solutions are tools that enhance human decision-making and creativity."
     },
     {
-      title: "Transparent and Explainable",
-      description: "We believe in demystifying AI. Our systems are designed with transparency in mind, allowing users to understand how decisions are being made."
-    },
-    {
       title: "Security by Design",
       description: "Data security and privacy are foundational to our approach. We implement rigorous security measures at every stage of development."
     },
     {
       title: "Continuous Improvement",
       description: "AI is an evolving field, and we are committed to staying at the forefront. We continuously refine our solutions based on new research and feedback."
-    },
-    {
-      title: "Ethical Responsibility",
-      description: "We consider the ethical implications of our technology and take responsibility for ensuring our AI systems are fair, unbiased, and beneficial to society."
     }
   ];
 
@@ -83,42 +75,10 @@ export default function AboutPage() {
         <div className="container max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-4xl font-medium mb-10 text-center text-white">
-              Leadership and Backing
+              Our Investors 
             </h2>
             
-            <div className="flex justify-center">
-              <FadeInSection>
-                <Card className="group max-w-3xl rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
-                  <div className="flex flex-col md:flex-row">
-                    <div className="relative w-full md:w-1/2 h-80 md:h-auto overflow-hidden">
-                      <Image 
-                        src={leadershipTeam[0].image}
-                        alt={leadershipTeam[0].name}
-                        fill
-                        style={{ objectFit: "cover", objectPosition: "center" }}
-                        className="transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-8 md:w-1/2">
-                      <h3 className="text-2xl font-medium mb-2 text-white group-hover:text-[#B3EBF2] transition-colors duration-300">
-                        {leadershipTeam[0].name}
-                      </h3>
-                      <p className="text-[#B3EBF2] text-lg mb-4">
-                        {leadershipTeam[0].title}
-                      </p>
-                      <p className="text-gray-300 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                        {leadershipTeam[0].bio}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </FadeInSection>
-            </div>
-            
-            <div className="mt-16 text-center">
-              <h3 className="text-2xl font-medium mb-6 text-white">
-                Backed By
-              </h3>
+            <div className="mt-8 text-center">
               <div className="flex flex-wrap justify-center items-center gap-10 mt-8">
                 <div className="w-40 h-16 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
                   <span className="text-white text-lg font-medium">Elad Gil</span>

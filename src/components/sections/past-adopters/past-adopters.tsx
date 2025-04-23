@@ -140,7 +140,7 @@ export function PastAdopters() {
                 
                 <FadeInSection delay={200}>
                     <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto text-center mb-10 sm:mb-16">
-                        Delivering enterprise-grade AI solutions across sectors
+                    White glove experience for our partners across sectors
                     </p>
                 </FadeInSection>
                 

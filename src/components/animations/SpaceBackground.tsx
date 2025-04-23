@@ -53,7 +53,7 @@ export function SpaceBackground({
           x: (Math.random() - 0.5) * canvas.width * 2,
           y: (Math.random() - 0.5) * canvas.height * 2,
           z: z,
-          size: Math.random() * 0.5 + 0.2,
+          size: Math.random() * 0.7 + 0.3,
           color: `rgba(255, 255, 255, ${Math.random() * 0.8 + 0.2})`,
           speedModifier: Math.random() * 0.5 + 0.8 // Random speed variation per star
         };
@@ -161,7 +161,7 @@ export function SpaceBackground({
               x: Math.cos(newAngle) * dist * 1.2,
               y: Math.sin(newAngle) * dist * 1.2,
               z: 1100, // Place slightly farther to avoid bunching
-              size: Math.random() * 0.5 + 0.2,
+              size: Math.random() * 0.7 + 0.3,
               color: `rgba(255, 255, 255, ${Math.random() * 0.8 + 0.2})`,
               speedModifier: Math.random() * 0.5 + 0.8 // Refresh speed modifier
             };
@@ -173,7 +173,7 @@ export function SpaceBackground({
           const projectedY = (star.y / star.z) * depthFactor + centerY;
           
           // Calculate size based on distance (closer = bigger)
-          const projectedSize = star.size * (depthFactor / star.z) * 1.2; // Slightly larger stars
+          const projectedSize = star.size * (depthFactor / star.z) * 1.5;
           
           // Skip drawing if outside canvas
           if (
@@ -192,10 +192,10 @@ export function SpaceBackground({
           ctx.fill();
           
           // Add a subtle glow for brighter stars
-          if (projectedSize > 0.8) {
+          if (projectedSize > 0.7) {
             ctx.beginPath();
             ctx.fillStyle = star.color.replace(')', ', 0.3)').replace('rgba', 'rgba');
-            ctx.arc(projectedX, projectedY, projectedSize * 2, 0, Math.PI * 2);
+            ctx.arc(projectedX, projectedY, projectedSize * 2.2, 0, Math.PI * 2);
             ctx.fill();
           }
         });

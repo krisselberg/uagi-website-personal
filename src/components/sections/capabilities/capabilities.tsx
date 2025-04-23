@@ -13,48 +13,35 @@ export function Capabilities(){
     const benefits = [
         {
             icon: (
-                <Image 
-                    src="/speed.svg"
-                    alt="Speed Icon"
-                    width={40}
-                    height={40}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110"
-                />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
             ),
             title: "Speed",
-            description: "Production-ready AI in weeks.",
-            gradientFrom: "from-blue-500/10",
-            gradientTo: "to-indigo-900/30"
+            description: "Production-ready AI in weeks."
         },
         {
             icon: (
-                <Image 
-                    src="/talent.svg"
-                    alt="Talent Icon"
-                    width={40}
-                    height={40}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110"
-                />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                    <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M23 21V19C22.9986 17.1771 21.765 15.5857 20 15.13" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M16 3.13C17.7699 3.58317 19.0078 5.17594 19.0078 7.005C19.0078 8.83406 17.7699 10.4268 16 10.88" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
             ),
             title: "Talent",
-            description: "World-class AI experts.",
-            gradientFrom: "from-blue-400/20",
-            gradientTo: "to-cyan-900/30"
+            description: "World-class AI experts."
         },
         {
             icon: (
-                <Image 
-                    src="/privacy.svg"
-                    alt="Privacy Icon"
-                    width={40}
-                    height={40}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110"
-                />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 16V12" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 8H12.01" stroke="#B3EBF2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
             ),
             title: "Security",
-            description: "Enterprise-grade security.",
-            gradientFrom: "from-purple-500/10",
-            gradientTo: "to-indigo-900/30"
+            description: "Enterprise-grade security."
         }
     ];
 
@@ -79,18 +66,15 @@ export function Capabilities(){
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
                                 {benefits.map((benefit, index) => (
                                     <FadeInSection key={index} delay={index * 200}>
-                                        <div className="group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
-                                            <div className={`h-16 sm:h-20 md:h-24 flex items-center justify-center bg-gradient-to-br ${benefit.gradientFrom} ${benefit.gradientTo}`}>
-                                                <div className="relative">
-                                                    {benefit.icon}
-                                                    <div className="absolute -inset-3 sm:-inset-4 bg-white/5 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-                                                </div>
-                                            </div>
-                                            <div className="p-4 sm:p-5 md:p-6 flex flex-col items-center sm:items-start">
-                                                <h3 className="text-xl sm:text-xl md:text-2xl font-medium mb-2 sm:mb-3 md:mb-4 text-white group-hover:text-[#B3EBF2] transition-colors duration-300 text-center sm:text-left">
+                                        <div className="group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/30 p-6 flex flex-col">
+                                            <div className="mb-4">
+                                                <h3 className="text-2xl font-medium mb-1 text-white flex items-center">
+                                                    <span className="mr-3 flex items-center">
+                                                        {benefit.icon}
+                                                    </span>
                                                     {benefit.title}
                                                 </h3>
-                                                <p className="text-base sm:text-base md:text-lg text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed text-center sm:text-left">
+                                                <p className="text-base text-gray-400 mt-4">
                                                     {benefit.description}
                                                 </p>
                                             </div>

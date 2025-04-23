@@ -19,15 +19,15 @@ export default function AboutPage() {
   const principles = [
     {
       title: "Human-Centered AI",
-      description: "Our AI solutions are tools that enhance human decision-making."
+      description: "We design our systems to augment human capabilities, not replace them. Our AI solutions are tools that enhance human decision-making and creativity."
     },
     {
       title: "Security by Design",
-      description: "We implement rigorous security measures at every stage of development."
+      description: "Data security and privacy are foundational to our approach. We implement rigorous security measures at every stage of development."
     },
     {
       title: "Continuous Improvement",
-      description: "We continuously refine our solutions based on new research and feedback."
+      description: "AI is an evolving field, and we are committed to staying at the forefront. We continuously refine our solutions based on new research and feedback."
     }
   ];
 

@@ -122,43 +122,12 @@ export function JoinTeam() {
                         <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12">
                             We're building something transformative in San Francisco and seeking exceptional AI engineering talent to join us in-office.
                         </p>
-                        <div className="flex justify-center">
-                            <Link href="https://jobs.ashbyhq.com/universalagi">
-                                <Button 
-                                    className="rounded-full text-black/90 text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
-                                    style={{ 
-                                        background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
-                                        boxShadow: '0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)'
-                                    }}
-                                >
-                                    Open Roles
-                                </Button>
-                            </Link>
-                        </div>
                     </FadeInSection>
                 </div>
 
-                {/* Benefits Cards Section */}
+                {/* Mission Statement Section with Quotes integrated - Moved to be before benefits cards */}
                 <FadeInSection delay={100}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
-                        {benefits.map((benefit, index) => (
-                            <FadeInSection key={index} delay={index * 50}>
-                                <div className="group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
-                                    <div className="p-4 sm:p-5 md:p-6">
-                                        {benefit.icon}
-                                        <h3 className="text-base sm:text-lg md:text-xl font-medium text-white group-hover:text-[#B3EBF2] transition-colors duration-300">
-                                            {benefit.title}
-                                        </h3>
-                                    </div>
-                                </div>
-                            </FadeInSection>
-                        ))}
-                    </div>
-                </FadeInSection>
-
-                {/* Mission Statement Section with Quotes integrated */}
-                <FadeInSection delay={150}>
-                    <div className="relative w-full mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-28 overflow-visible">
+                    <div className="relative w-full mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-24 overflow-visible">
                         <div className="flex justify-center relative">
                             <div style={{ 
                                 width: investCardWidth, 
@@ -225,6 +194,41 @@ export function JoinTeam() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </FadeInSection>
+                
+                {/* Button moved here, after the People section */}
+                <FadeInSection delay={125}>
+                    <div className="flex justify-center mb-12 sm:mb-16 md:mb-20">
+                        <Link href="https://jobs.ashbyhq.com/universalagi">
+                            <Button 
+                                className="rounded-full text-black/90 text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
+                                style={{ 
+                                    background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
+                                    boxShadow: '0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)'
+                                }}
+                            >
+                                Open Roles
+                            </Button>
+                        </Link>
+                    </div>
+                </FadeInSection>
+
+                {/* Benefits Cards Section */}
+                <FadeInSection delay={150}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+                        {benefits.map((benefit, index) => (
+                            <FadeInSection key={index} delay={index * 50}>
+                                <div className="group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
+                                    <div className="p-4 sm:p-5 md:p-6">
+                                        {benefit.icon}
+                                        <h3 className="text-base sm:text-lg md:text-xl font-medium text-white group-hover:text-[#B3EBF2] transition-colors duration-300">
+                                            {benefit.title}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </FadeInSection>
+                        ))}
                     </div>
                 </FadeInSection>
                 

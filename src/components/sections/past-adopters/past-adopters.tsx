@@ -24,7 +24,7 @@ export function PastAdopters() {
         {
             title: "Enterprise",
             category: "Private Sector",
-            description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage.",
+            description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage. Our intelligent AI agents transform your data into your most powerful asset:",
             caseStudies: [
                 "Technology",
                 "Finance", 

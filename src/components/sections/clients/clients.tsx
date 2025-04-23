@@ -11,7 +11,7 @@ const logos = [
   { src: "/logos/anyscale.svg", alt: "Anyscale Logo", width: 200, height: 100 },
   { src: "/logos/uc-berkeley.svg", alt: "UC Berkeley Logo", width: 170, height: 85 },
   { src: "/logos/nvidia-logo.svg", alt: "Nvidia Logo", width: 160, height: 80 },
-  { src: "/logos/vllm_logo.svg", alt: "VLLM Logo", width: 150, height: 75 },
+  // { src: "/logos/vllm_logo.svg", alt: "VLLM Logo", width: 150, height: 75 },
   // Add any other logos here if needed
 ];
 

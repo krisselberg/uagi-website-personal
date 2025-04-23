@@ -24,7 +24,7 @@ export function PastAdopters() {
         {
             title: "Enterprise",
             category: "Private Sector",
-            description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage. Our intelligent AI agents transform your data into your most powerful asset.",
+            description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage.",
             caseStudies: [
                 "<strong>Unlock Predictive Insights:</strong> Deploy AI agents to analyze complex datasets, revealing hidden patterns and forecasting future trends.",
                 "<strong>Sharpen Decision-Making:</strong> Convert raw data into actionable intelligence, empowering faster, more strategic business choices.",

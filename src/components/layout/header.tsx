@@ -44,7 +44,7 @@ export function Header() {
       <div className="container flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logos/universalagi.png"
+            src="/logos/uagi-logo.svg"
             alt="UniversalAGI Logo"
             width={160}
             height={32}

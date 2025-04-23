@@ -13,7 +13,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-4 md:mb-6">
               <Image
-                src="/logos/universalagi.png"
+                src="/logos/uagi-logo.svg"
                 alt="UniversalAGI Logo"
                 width={160}
                 height={32}

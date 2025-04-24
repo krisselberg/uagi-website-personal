@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import "./globals.css";
 import ClientBody from "./ClientBody";
 
@@ -25,10 +25,10 @@ import ClientBody from "./ClientBody";
 //   display: "swap",
 // });
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700'],
-  variable: '--font-outfit',
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={outfit.className} suppressHydrationWarning>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <ClientBody>{children}</ClientBody>
     </html>
   );

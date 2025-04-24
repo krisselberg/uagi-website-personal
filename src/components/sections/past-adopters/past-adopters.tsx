@@ -24,7 +24,7 @@ export function PastAdopters() {
         {
             title: "Enterprise",
             category: "Private Sector",
-            description: "We partner with leading enterprises to build custom AI solutions that drive business value and competitive advantage.",
+            description: "Transforming secure data into powerful business advantages. Your data. Your environment. Our expertise. Proven success with enterprises.",
             caseStudies: [
                 "<strong>Unlock Predictive Insights:</strong> Deploy AI agents to analyze complex datasets, revealing hidden patterns and forecasting future trends.",
                 "<strong>Sharpen Decision-Making:</strong> Convert raw data into actionable intelligence, empowering faster, more strategic business choices.",
@@ -38,7 +38,7 @@ export function PastAdopters() {
         {
             title: "Government",
             category: "Public Sector",
-            description: "Our secure, compliant AI solutions help government agencies modernize operations and better serve citizens.",
+            description: "Empowering governments to transform data into smarter decisions. We've enabled public sector organizations streamline operations and make superior policy, HR, financial, and operational choices—all while maximizing existing data assets in secure environments.",
             caseStudies: [
                 "<strong>Generate Actionable Analytics:</strong> Utilize AI agents to process vast government data, extracting clear insights for mission-critical tasks.",
                 "<strong>Boost Operational Efficiency:</strong> Drive significant improvements in resource allocation and process optimization through data-driven intelligence.",
@@ -100,22 +100,11 @@ export function PastAdopters() {
             
             {/* Text section */}
             <div className="flex-1 flex flex-col p-5 sm:p-6 md:p-8 bg-[#000000] relative">
-                {/* Fixed height container for description */}
-                <div className="h-[120px] mb-4 sm:mb-6">
+                {/* Description container without fixed height since we removed the capabilities section */}
+                <div className="mb-4 sm:mb-6">
                     <p className="text-gray-300 text-base sm:text-lg">
                         {data.description}
                     </p>
-                </div>
-                
-                {/* Capabilities list - now independent of description height */}
-                <div className="space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-                    <h4 className="text-base sm:text-lg font-medium text-white mb-2 sm:mb-4 border-b border-gray-800 pb-2">Capabilities:</h4>
-                    {data.caseStudies.map((study, index) => (
-                        <div key={index} className="flex items-start">
-                            <div style={{color: data.accentColor}} className="mr-2 sm:mr-3 mt-1">•</div>
-                            <p className="text-gray-400 text-sm sm:text-base flex-1" dangerouslySetInnerHTML={{ __html: study }}></p>
-                        </div>
-                    ))}
                 </div>
             </div>
         </div>

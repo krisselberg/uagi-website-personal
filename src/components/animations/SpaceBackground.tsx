@@ -9,9 +9,9 @@ interface SpaceBackgroundProps {
 }
 
 export function SpaceBackground({ 
-  starCount = 200, 
-  speed = 0.5,
-  depthFactor = 500 
+  starCount = 1200, 
+  speed = 3,
+  depthFactor = 100 
 }: SpaceBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isInitialized, setIsInitialized] = useState(false);
@@ -53,8 +53,8 @@ export function SpaceBackground({
           x: (Math.random() - 0.5) * canvas.width * 2,
           y: (Math.random() - 0.5) * canvas.height * 2,
           z: z,
-          size: Math.random() * 0.7 + 0.3,
-          color: `rgba(255, 255, 255, ${Math.random() * 0.8 + 0.2})`,
+          size: Math.random() * 1.2 + 0.5,
+          color: `rgba(255, 255, 255, ${Math.random() * 0.9 + 0.3})`,
           speedModifier: Math.random() * 0.5 + 0.8 // Random speed variation per star
         };
       }
@@ -161,8 +161,8 @@ export function SpaceBackground({
               x: Math.cos(newAngle) * dist * 1.2,
               y: Math.sin(newAngle) * dist * 1.2,
               z: 1100, // Place slightly farther to avoid bunching
-              size: Math.random() * 0.7 + 0.3,
-              color: `rgba(255, 255, 255, ${Math.random() * 0.8 + 0.2})`,
+              size: Math.random() * 1.2 + 0.5,
+              color: `rgba(255, 255, 255, ${Math.random() * 0.9 + 0.3})`,
               speedModifier: Math.random() * 0.5 + 0.8 // Refresh speed modifier
             };
             return;
@@ -192,17 +192,17 @@ export function SpaceBackground({
           ctx.fill();
           
           // Add a subtle glow for brighter stars
-          if (projectedSize > 0.7) {
+          if (projectedSize > 0.5) { // Lower threshold so more stars get glow
             ctx.beginPath();
-            ctx.fillStyle = star.color.replace(')', ', 0.3)').replace('rgba', 'rgba');
-            ctx.arc(projectedX, projectedY, projectedSize * 2.2, 0, Math.PI * 2);
+            ctx.fillStyle = star.color.replace(')', ', 0.4)').replace('rgba', 'rgba');
+            ctx.arc(projectedX, projectedY, projectedSize * 2.5, 0, Math.PI * 2);
             ctx.fill();
           }
         });
         
         // Add a few new stars randomly to maintain density
         // This helps maintain the animation's initial feel
-        if (Math.random() < 0.05) { // 5% chance each frame
+        if (Math.random() < 0.25) { // 25% chance each frame
           const randomIndex = Math.floor(Math.random() * stars.length);
           stars[randomIndex] = createStar(1100); // Place new star at far distance
         }

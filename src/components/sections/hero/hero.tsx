@@ -1,14 +1,27 @@
 'use client';
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { useSpaceAnimation } from "@/context/SpaceAnimationContext";
 
 export function HeroSection() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const { setSpeed, defaultSpeed } = useSpaceAnimation();
+    const hoverSpeed = 2.5;
 
     useEffect(() => {
         // Set isLoaded to true after component mounts to trigger animations
         setIsLoaded(true);
-    }, []);
+        // Ensure speed is reset if component unmounts while hovering
+        return () => setSpeed(defaultSpeed);
+    }, [setSpeed, defaultSpeed]);
+
+    const handleMouseEnter = () => {
+        setSpeed(hoverSpeed);
+    };
+
+    const handleMouseLeave = () => {
+        setSpeed(defaultSpeed);
+    };
 
     return (
         <section className="w-full pt-32 pb-48 sm:pt-40 sm:pb-64 md:pt-40 md:pb-40 relative overflow-hidden">
@@ -39,6 +52,8 @@ export function HeroSection() {
                     style={{ transitionDelay: '600ms' }}
                 >
                     <Button 
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
                         className="rounded-full text-black/90 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
                         style={{ 
                             background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
@@ -50,7 +65,7 @@ export function HeroSection() {
                     <Button 
                         className="rounded-full bg-black/90 text-white hover:bg-black/80 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-regular border border-gray-400/20"
                     >
-                        <a href="/#join-team">Careers</a>
+                        <a href="/careers#open-roles">Careers</a>
                     </Button>
                 </div>
             </div>

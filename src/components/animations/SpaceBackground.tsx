@@ -18,6 +18,11 @@ export function SpaceBackground({
   const starsRef = useRef<any[]>([]);
   const animationIdRef = useRef<number>(0);
   const handleResizeRef = useRef<(() => void) | null>(null);
+  const speedRef = useRef(speed);
+
+  useEffect(() => {
+    speedRef.current = speed;
+  }, [speed]);
 
   // Initialize canvas and start animation
   useEffect(() => {
@@ -121,7 +126,8 @@ export function SpaceBackground({
         // Calculate delta time for frame-rate independent animation
         const deltaTime = time - lastTime;
         lastTime = time;
-        const baseSpeedFactor = speed * (deltaTime / 16.67); // Normalize to 60fps
+        const currentSpeed = speedRef.current;
+        const baseSpeedFactor = currentSpeed * (deltaTime / 16.67); // Normalize to 60fps
         
         // Get current dimensions for calculations
         const width = canvas.width / (window.devicePixelRatio || 1);
@@ -207,7 +213,7 @@ export function SpaceBackground({
         window.removeEventListener('resize', handleResize);
       }
     };
-  }, [starCount, speed, depthFactor, isInitialized]);
+  }, [starCount, depthFactor, isInitialized]);
   
   return (
     <canvas 

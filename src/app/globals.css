@@ -24,7 +24,7 @@
     --input: 0 0% 14%;
     --ring: 30 20% 50%;
     --radius: 0rem;
-    --font-sans: var(--font-dm-mono);
+    --font-sans: var(--font-inter);
   }
 
   .dark {

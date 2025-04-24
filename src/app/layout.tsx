@@ -37,6 +37,25 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logos/uagi-icon.svg",
   },
+  openGraph: {
+    title: "UniversalAGI",
+    description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
+    images: [
+      {
+        url: "/message_thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "UniversalAGI",
+      }
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UniversalAGI",
+    description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
+    images: ["/message_thumbnail.png"],
+  },
 };
 
 export default function RootLayout({

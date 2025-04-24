@@ -46,7 +46,7 @@ export default function AboutPage() {
           </h1>
           
           <p className="text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
-            Building the future of enterprise AI solutions
+            Building the future of enterprise and government AI 
           </p>
         </div>
       </section>
@@ -79,27 +79,33 @@ export default function AboutPage() {
             </h2>
             
             <div className="mt-8 text-center">
-              <div className="flex flex-wrap justify-center items-center gap-10 mt-8">
-                <div className="w-48 h-20 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
-                  <span className="text-white text-lg font-medium">Elad Gil</span>
+              <div className="flex flex-wrap justify-center items-center gap-8 mt-8">
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Elad Gil</span>
                 </div>
-                <div className="w-48 h-20 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
-                  <span className="text-white text-lg font-medium">Jared Kushner</span>
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Jared Kushner</span>
                 </div>
-                <div className="w-48 h-20 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
-                  <span className="text-white text-lg font-medium">David Patterson</span>
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">David Patterson</span>
                 </div>
-                <div className="w-48 h-20 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
-                  <span className="text-white text-lg font-medium">Eric Schmidt</span>
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Eric Schmidt</span>
                 </div>
               </div>
               
-              <div className="flex flex-wrap justify-center items-center gap-10 mt-10">
-                <div className="w-48 h-20 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
-                  <span className="text-white text-lg font-medium">Ion Stoica</span>
+              <div className="flex flex-wrap justify-center items-center gap-8 mt-8">
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Ion Stoica</span>
                 </div>
-                <div className="w-48 h-20 bg-gray-800/50 rounded-md flex items-center justify-center hover:bg-gray-700/60 transition-colors duration-300">
-                  <span className="text-white text-lg font-medium">Ivanka Trump</span>
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Ivanka Trump</span>
                 </div>
               </div>
             </div>

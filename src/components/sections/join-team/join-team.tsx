@@ -163,7 +163,7 @@ export function JoinTeam() {
                                                         <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
                                                     </svg>
                                                     <p className="text-sm sm:text-base text-gray-300">
-                                                        "I learned more here in one week than I did in years at previous jobs."
+                                                        "I've learned more in a week at UniversalAGI than I did in years at previous jobs."
                                                     </p>
                                                 </div>
                                             </div>

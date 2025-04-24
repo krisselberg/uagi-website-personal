@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
 import ClientBody from "./ClientBody";
+import Script from 'next/script';
 
 // New Carrois Gothic font
 // const carrois = Carrois_Gothic({
@@ -37,11 +38,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logos/uagi-icon.svg",
   },
-  metadataBase: new URL('https://universalagi.com'),
+  metadataBase: new URL('https://universalagi.netlify.app'),
   openGraph: {
     title: "UniversalAGI",
     description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
-    url: 'https://universalagi.com',
+    url: 'https://universalagi.netlify.app',
     images: [
       {
         url: "/message_thumbnail.png",
@@ -70,6 +71,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
+      <head>
+        {/* WhatsApp-specific meta tags */}
+        <meta property="og:title" content="UniversalAGI" />
+        <meta property="og:description" content="Latest AI Breakthroughs on top of your secure data" />
+        <meta property="og:image" content="https://universalagi.netlify.app/message_thumbnail.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://universalagi.netlify.app" />
+        <meta property="og:type" content="website" />
+      </head>
       <ClientBody>{children}</ClientBody>
     </html>
   );

@@ -7,12 +7,12 @@ import { JoinTeam } from "@/components/sections/join-team/join-team";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UniversalAGI",
-  description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
+  title: "UniversalAGI - AI Agents for Enterprise and Government",
+  description: "Latest AI Breakthroughs on top of your secure data",
   openGraph: {
     title: "UniversalAGI",
-    description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
-    url: '/',
+    description: "Latest AI Breakthroughs on top of your secure data",
+    url: 'https://universalagi.netlify.app',
     images: [
       {
         url: "/message_thumbnail.png",
@@ -21,6 +21,9 @@ export const metadata: Metadata = {
         alt: "UniversalAGI",
       }
     ],
+    siteName: "UniversalAGI",
+    locale: "en_US",
+    type: "website",
   }
 };
 

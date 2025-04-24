@@ -23,11 +23,8 @@ export function BuiltByLeaders() {
       {/* Keep the header in container */}
       <div className="container px-4 sm:px-6 md:px-8 mb-10 sm:mb-16">
         <FadeInSection>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white/90 leading-tight">
-            Built by AI Leaders from Silicon Valley
-            <span className="hidden xs:inline"> <br /></span>
-            <span className="xs:hidden"> </span>
-            and Top Research Institutions
+          <h3 className="text-4xl sm:text-5xl md:text-6xl font-medium text-center text-white/90 leading-tight">
+            Built by AI Leaders from Silicon Valley <br /> and Top Reseach Institutions
           </h3>
         </FadeInSection>
       </div>

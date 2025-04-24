@@ -18,6 +18,9 @@ export function HeroSection() {
                     className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 sm:mb-8 md:mb-10 max-w-6xl mx-auto text-center text-foreground transition-all duration-1000 transform ${
                         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
+                    style={{ 
+                        textShadow: '0 0 20px rgba(255, 255, 255, 0.15), 0 0 30px rgba(179, 235, 242, 0.1)'
+                    }}
                 >
                     AI Agents for Enterprise and Government
                 </h1>

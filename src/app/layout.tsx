@@ -37,9 +37,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logos/uagi-icon.svg",
   },
+  metadataBase: new URL('https://universalagi.com'),
   openGraph: {
     title: "UniversalAGI",
     description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
+    url: 'https://universalagi.com',
     images: [
       {
         url: "/message_thumbnail.png",
@@ -48,6 +50,8 @@ export const metadata: Metadata = {
         alt: "UniversalAGI",
       }
     ],
+    siteName: "UniversalAGI",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -55,6 +59,7 @@ export const metadata: Metadata = {
     title: "UniversalAGI",
     description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
     images: ["/message_thumbnail.png"],
+    creator: "@UniversalAGI",
   },
 };
 

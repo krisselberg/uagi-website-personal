@@ -145,15 +145,15 @@
 }
 
 .star-1 {
-  animation: twinkle 2s linear infinite;
+  animation: twinkle 1.5s linear infinite;
 }
 
 .star-2 {
-  animation: twinkle 1.5s linear infinite 0.3s;
+  animation: twinkle 1.2s linear infinite 0.2s;
 }
 
 .star-3 {
-  animation: twinkle 2.5s linear infinite 0.6s;
+  animation: twinkle 1.8s linear infinite 0.4s;
 }
 
 @keyframes glow-pulse {
@@ -175,7 +175,7 @@
 }
 
 .purple-haze {
-  animation: drift 6s ease-in-out infinite;
+  animation: drift 4.5s ease-in-out infinite;
   transform-origin: center;
 }
 

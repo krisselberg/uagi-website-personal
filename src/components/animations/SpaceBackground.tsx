@@ -11,7 +11,7 @@ interface SpaceBackgroundProps {
 export function SpaceBackground({ 
   starCount = 1200, 
   speed = 3,
-  depthFactor = 100 
+  depthFactor = 175 
 }: SpaceBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isInitialized, setIsInitialized] = useState(false);
@@ -152,7 +152,7 @@ export function SpaceBackground({
           // Place them at the far end with the same x,y trajectory for continuity
           if (star.z <= 0) {
             // Reset to far position but maintain direction
-            star.z = 1100;
+            star.z = 600;
             // Keep the same relative position for a smooth loop
             // No need to change other properties to maintain consistent appearance
           }

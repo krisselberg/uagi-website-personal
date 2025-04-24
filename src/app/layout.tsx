@@ -72,14 +72,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
-        {/* WhatsApp-specific meta tags */}
+        {/* WhatsApp/Facebook-specific meta tags */}
+        <meta property="og:site_name" content="UniversalAGI" />
         <meta property="og:title" content="UniversalAGI" />
         <meta property="og:description" content="Latest AI Breakthroughs on top of your secure data" />
         <meta property="og:image" content="https://universalagi.netlify.app/message_thumbnail.png" />
+        <meta property="og:image:secure_url" content="https://universalagi.netlify.app/message_thumbnail.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="UniversalAGI" />
         <meta property="og:url" content="https://universalagi.netlify.app" />
         <meta property="og:type" content="website" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="UniversalAGI" />
+        <meta name="twitter:description" content="Latest AI Breakthroughs on top of your secure data" />
+        <meta name="twitter:image" content="https://universalagi.netlify.app/message_thumbnail.png" />
       </head>
       <ClientBody>{children}</ClientBody>
     </html>

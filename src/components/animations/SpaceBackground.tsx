@@ -59,12 +59,13 @@ export function SpaceBackground({
         };
       }
 
-      // Initialize stars with varied depth
+      // Initialize stars with even distribution for a consistent loop
       function initStars() {
         const newStars: Star[] = [];
-        // Initial evenly distributed stars across all z depths
+        // Create a uniform distribution of stars for a consistent loop
         for (let i = 0; i < starCount; i++) {
-          const zPosition = 100 + (1000 / starCount) * i; // Spread stars evenly across z-depth
+          // Distribute stars evenly through the entire z-range
+          const zPosition = 100 + (1000 / starCount) * i;
           newStars.push(createStar(zPosition));
         }
         starsRef.current = newStars;
@@ -126,8 +127,11 @@ export function SpaceBackground({
         const width = canvas.width / (window.devicePixelRatio || 1);
         const height = canvas.height / (window.devicePixelRatio || 1);
         
-        // Add a semi-transparent layer for subtle trails
-        ctx.fillStyle = "rgba(0, 0, 0, 0.5)"; 
+        // Completely reset the canvas each frame for consistent intensity
+        ctx.clearRect(0, 0, width, height);
+        
+        // Pure black background for maximum contrast
+        ctx.fillStyle = "rgba(0, 0, 0, 1)"; 
         ctx.fillRect(0, 0, width, height);
         
         const centerX = width / 2;
@@ -135,9 +139,6 @@ export function SpaceBackground({
         
         // Get local reference to stars array for this animation frame
         const stars = starsRef.current;
-
-        // Count how many stars we need to replace
-        let starsToReplace = 0;
 
         // Draw and update stars
         stars.forEach((star, i) => {
@@ -147,25 +148,13 @@ export function SpaceBackground({
           // Move star closer (decrease z) with frame-rate independent speed
           star.z -= speedFactor;
           
-          // Reset star if it's too close
+          // Create a looping effect by resetting stars that get too close
+          // Place them at the far end with the same x,y trajectory for continuity
           if (star.z <= 0) {
-            starsToReplace++;
-            // Instead of full reset, keep good velocity by placing star far away
-            // But keep the X,Y position similar to current trajectory for continuity
-            const angle = Math.atan2(star.y, star.x);
-            const dist = Math.sqrt(star.x * star.x + star.y * star.y);
-            // Adjust the angle slightly for variation
-            const newAngle = angle + (Math.random() - 0.5) * 0.2;
-            // Place at consistent z-depth
-            stars[i] = {
-              x: Math.cos(newAngle) * dist * 1.2,
-              y: Math.sin(newAngle) * dist * 1.2,
-              z: 1100, // Place slightly farther to avoid bunching
-              size: Math.random() * 1.2 + 0.5,
-              color: `rgba(255, 255, 255, ${Math.random() * 0.9 + 0.3})`,
-              speedModifier: Math.random() * 0.5 + 0.8 // Refresh speed modifier
-            };
-            return;
+            // Reset to far position but maintain direction
+            star.z = 1100;
+            // Keep the same relative position for a smooth loop
+            // No need to change other properties to maintain consistent appearance
           }
           
           // Project 3D position to 2D screen
@@ -199,13 +188,6 @@ export function SpaceBackground({
             ctx.fill();
           }
         });
-        
-        // Add a few new stars randomly to maintain density
-        // This helps maintain the animation's initial feel
-        if (Math.random() < 0.25) { // 25% chance each frame
-          const randomIndex = Math.floor(Math.random() * stars.length);
-          stars[randomIndex] = createStar(1100); // Place new star at far distance
-        }
         
         animationIdRef.current = requestAnimationFrame(animate);
       }

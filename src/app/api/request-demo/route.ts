@@ -1,19 +1,21 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
 
-// Initialize Resend with the API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Recipient Email
 const recipientEmail = process.env.DEMO_REQUEST_RECIPIENT_EMAIL || 'contact@universalagi.ai';
-const fromEmail = process.env.DEMO_REQUEST_FROM_EMAIL || 'onboarding@resend.dev'; // Default Resend address, can be customized after domain verification
+
+// Gmail credentials from environment variables
+const gmailAddress = process.env.GMAIL_ADDRESS;
+const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
 
 export async function POST(req: NextRequest) {
-  try {
-    // Check for API key
-    if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not set.');
-      return NextResponse.json({ error: 'Server configuration error.' }, { status: 500 });
-    }
+  // Check if Gmail credentials are set
+  if (!gmailAddress || !gmailAppPassword) {
+    console.error('Gmail credentials (GMAIL_ADDRESS, GMAIL_APP_PASSWORD) are not set in environment variables.');
+    return NextResponse.json({ error: 'Server configuration error.' }, { status: 500 });
+  }
 
+  try {
     // Parse the request body
     const body = await req.json();
     const { firstName, lastName, email, company, title, message } = body;
@@ -23,13 +25,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
     }
 
-    console.log(`Sending email from ${fromEmail} to ${recipientEmail}`);
+    // Create a Nodemailer transporter using Gmail SMTP and App Password
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: gmailAddress,
+        pass: gmailAppPassword, // Use the App Password here
+      },
+    });
 
-    // Send the email using Resend
-    const { data, error } = await resend.emails.send({
-      from: `Demo Request <${fromEmail}>`, // Sender name and email
-      to: [recipientEmail], // Recipient email address
-      subject: `New Demo Request from ${firstName} ${lastName} (${company})`,
+    // Define email options
+    const mailOptions = {
+      from: `"UniversalAGI Demo Request" <${gmailAddress}>`, // Sender address (Gmail might override the name part)
+      to: recipientEmail, // List of receivers
+      subject: `New Demo Request from ${firstName} ${lastName} (${company})`, // Subject line
       html: `
         <h1>New Demo Request</h1>
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
@@ -38,21 +47,28 @@ export async function POST(req: NextRequest) {
         <p><strong>Title:</strong> ${title}</p>
         <p><strong>Message:</strong></p>
         <p>${message || 'No message provided.'}</p>
-      `,
-      reply_to: email, // Set the reply-to field to the user's email
-    });
+      `, // HTML body
+      replyTo: email, // Set reply-to to the user's email
+    };
 
-    if (error) {
-      console.error('Resend API Error:', error);
-      return NextResponse.json({ error: 'Failed to send email.', details: error }, { status: 500 });
+    console.log(`Attempting to send email via Gmail from ${gmailAddress} to ${recipientEmail}`);
+
+    // Send mail with defined transport object
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      console.log('Email sent successfully:', info.messageId);
+      return NextResponse.json({ success: true, message: 'Demo request submitted successfully!', messageId: info.messageId }, { status: 200 });
+    } catch (mailError: any) {
+      console.error('Nodemailer Error sending email:', mailError);
+      // Log specific details if available
+      if (mailError.response) {
+        console.error('Nodemailer Error Response:', mailError.response);
+      }
+      return NextResponse.json({ error: 'Failed to send email.', details: mailError.message || 'Unknown mailing error' }, { status: 500 });
     }
 
-    console.log('Email sent successfully:', data);
-    return NextResponse.json({ success: true, message: 'Demo request submitted successfully!', emailId: data?.id }, { status: 200 });
-
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error processing request:', error);
-    // Check if it's a JSON parsing error
     if (error instanceof SyntaxError) {
       return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
     }

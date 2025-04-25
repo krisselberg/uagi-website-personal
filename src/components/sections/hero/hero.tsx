@@ -8,7 +8,7 @@ const MOBILE_BREAKPOINT = 768;
 
 export function HeroSection() {
     const [isLoaded, setIsLoaded] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(true); // Default to true initially
     const { setSpeed, defaultSpeed } = useSpaceAnimation();
     const hoverSpeed = 2.5;
 
@@ -31,26 +31,26 @@ export function HeroSection() {
     // Effect to set initial load animation
     useEffect(() => {
         setIsLoaded(true);
-        // Ensure speed is reset if component unmounts while hovering (only relevant for desktop)
+        // Cleanup: Ensure speed is reset if component unmounts while hovered (desktop only)
         return () => {
-            if (!isMobile) {
+            // Check isMobile directly in cleanup, don't rely on potentially stale closure value
+            if (window.innerWidth >= MOBILE_BREAKPOINT) {
                 setSpeed(defaultSpeed);
             }
         };
-    }, [setSpeed, defaultSpeed, isMobile]); // Add isMobile dependency
+    // No need for isMobile dependency here as we check width directly in cleanup
+    }, [setSpeed, defaultSpeed]); 
 
     const handleMouseEnter = () => {
-        // Only trigger on non-mobile
-        if (!isMobile) {
-            setSpeed(hoverSpeed);
-        }
+        // Strict check: Do absolutely nothing on mobile
+        if (isMobile) return; 
+        setSpeed(hoverSpeed);
     };
 
     const handleMouseLeave = () => {
-        // Only trigger on non-mobile
-        if (!isMobile) {
-            setSpeed(defaultSpeed);
-        }
+        // Strict check: Do absolutely nothing on mobile
+        if (isMobile) return;
+        setSpeed(defaultSpeed);
     };
 
     return (
@@ -82,9 +82,9 @@ export function HeroSection() {
                     style={{ transitionDelay: '600ms' }}
                 >
                     <Button 
-                        // Conditionally apply handlers only if not mobile
-                        onMouseEnter={!isMobile ? handleMouseEnter : undefined}
-                        onMouseLeave={!isMobile ? handleMouseLeave : undefined}
+                        // Always attach handlers, but they check isMobile internally
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
                         className="rounded-full text-black/90 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
                         style={{ 
                             background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',

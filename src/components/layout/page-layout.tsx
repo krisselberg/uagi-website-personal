@@ -26,17 +26,17 @@ export function PageLayout({ children }: PageLayoutProps) {
 
   return (
     <SpaceAnimationProvider initialSpeed={0.5}>
-      <div className="min-h-screen flex flex-col relative">
-        {/* Only render the background once */}
-        {isMounted && <GlobalSpaceBackground />}
-        <Header />
-        <main className="flex-grow pt-20 relative z-10">
-          {children}
-        </main>
-        <div className="relative z-20">
-          <Footer />
-        </div>
+    <div className="min-h-screen flex flex-col relative">
+      {/* Only render the background once */}
+      {isMounted && <GlobalSpaceBackground />}
+      <Header />
+      <main className="flex-grow pt-20 relative z-10">
+        {children}
+      </main>
+      <div className="relative z-20">
+        <Footer />
       </div>
+    </div>
     </SpaceAnimationProvider>
   );
 }

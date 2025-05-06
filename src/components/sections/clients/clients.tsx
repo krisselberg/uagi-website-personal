@@ -2,25 +2,83 @@
 
 import Image from "next/image";
 import { FadeInSection } from "@/components/animations/FadeInSection";
+import { useEffect, useRef, useState } from "react";
 
 // Array of logo paths
 const logos = [
   { src: "/logos/Princeton.svg", alt: "Princeton Logo", width: 160, height: 80 },
   { src: "/logos/openai.svg", alt: "OpenAI Logo", width: 180, height: 90 },
-  { src: "/logos/intel.svg", alt: "Intel Logo", width: 110, height: 55 },
+  { src: "/logos/apple_logo.svg", alt: "Apple Logo", width: 180, height: 90, className: "pb-2" },
+  { src: "/logos/tesla.svg", alt: "Tesla Logo", width: 200, height: 100, className: "pt-1" },
+  { src: "/logos/nvidia-logo.svg", alt: "Nvidia Logo", width: 160, height: 80 },
   { src: "/logos/amazon.svg", alt: "Amazon Logo", width: 150, height: 75 },
-  { src: "/logos/anyscale.svg", alt: "Anyscale Logo", width: 200, height: 100 },
   { src: "/logos/palantir.svg", alt: "Palantir Logo", width: 200, height: 100 }, 
   { src: "/logos/uc-berkeley.svg", alt: "UC Berkeley Logo", width: 170, height: 85 },
-  { src: "/logos/nvidia-logo.svg", alt: "Nvidia Logo", width: 160, height: 80 },
-  { src: "/logos/apple_logo.svg", alt: "Apple Logo", width: 200, height: 200 },
-  { src: "/logos/tesla.svg", alt: "Tesla Logo", width: 200, height: 100 },
   { src: "/logos/rivian.svg", alt: "Rivian Logo", width: 200, height: 100 },
-  { src: "/logos/cruise.svg", alt: "Cruise Logo", width: 200, height: 100 },
+  { src: "/logos/intel.svg", alt: "Intel Logo", width: 110, height: 55 },
+  { src: "/logos/anyscale.svg", alt: "Anyscale Logo", width: 200, height: 100 },
+  { src: "/logos/cruise.svg", alt: "Cruise Logo", width: 140, height: 70 },
   // Add any other logos here if needed
 ];
 
 export function BuiltByLeaders() {
+  const [direction, setDirection] = useState<1 | -1>(1);
+  const tickerRef = useRef<HTMLDivElement>(null);
+  const frameRef = useRef<number>(0);
+  const posRef = useRef<number>(0);
+  const lastTimeRef = useRef<number>(performance.now());
+  const cycleWidthRef = useRef<number>(0);
+
+  // Calculate the exact width of one logo cycle (first N logos)
+  useEffect(() => {
+    const ticker = tickerRef.current;
+    if (!ticker) return;
+    // Find the width of the first N logos (half the children)
+    const children = Array.from(ticker.children).slice(0, ticker.children.length / 2) as HTMLElement[];
+    if (children.length === 0) return;
+    const first = children[0];
+    const last = children[children.length - 1];
+    // Use offsetLeft/offsetWidth for true layout width
+    const left = first.offsetLeft;
+    const right = last.offsetLeft + last.offsetWidth;
+    cycleWidthRef.current = right - left;
+  }, [logos.length]);
+
+  useEffect(() => {
+    const ticker = tickerRef.current;
+    if (!ticker) return;
+    let running = true;
+    // Use the calculated cycle width
+    const getCycleWidth = () => cycleWidthRef.current;
+    const pxPerSec = getCycleWidth() / 40;
+
+    function animate(now: number) {
+      if (!running) return;
+      const dt = (now - lastTimeRef.current) / 1000;
+      lastTimeRef.current = now;
+      posRef.current += direction * pxPerSec * dt;
+      const cycleWidth = getCycleWidth();
+      // Loop seamlessly, always in the correct direction
+      if (direction === 1 && posRef.current > cycleWidth) posRef.current -= cycleWidth;
+      if (direction === -1 && posRef.current < 0) posRef.current += cycleWidth;
+      // Clamp to [0, cycleWidth) for pixel-perfect loop
+      if (posRef.current >= cycleWidth) posRef.current = 0;
+      if (posRef.current < 0) posRef.current = cycleWidth - 1;
+      if (ticker) ticker.style.transform = `translateX(${-posRef.current}px)`;
+      frameRef.current = requestAnimationFrame(animate);
+    }
+    frameRef.current = requestAnimationFrame(animate);
+    return () => {
+      running = false;
+      cancelAnimationFrame(frameRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [direction, logos.length]);
+
+  function handleDirection(dir: 'left' | 'right') {
+    setDirection(dir === 'left' ? 1 : -1);
+  }
+
   return (
     <section className="w-full py-16 sm:py-24 md:py-32 overflow-hidden relative z-10">
       {/* Keep the header in container */}
@@ -32,27 +90,48 @@ export function BuiltByLeaders() {
         </FadeInSection>
       </div>
 
-      {/* Ticker now completely outside container */}
-      <div className="relative flex overflow-hidden group w-screen">
+      {/* Infinite ticker logo row */}
+      <div className="relative w-full">
+        {/* Arrow buttons */}
+        <button
+          aria-label="Scroll Left"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-0"
+          onClick={() => handleDirection('left')}
+          type="button"
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button
+          aria-label="Scroll Right"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-0"
+          onClick={() => handleDirection('right')}
+          type="button"
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
         {/* Left fade mask */}
-        <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-black/80 to-transparent z-10"></div>
-        
-        <div className="flex animate-ticker whitespace-nowrap">
-          {[...logos, ...logos].map((logo, index) => (
-            <div key={`ticker-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 lg:mx-16 flex items-center justify-center h-12 sm:h-14 md:h-16">
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                className="object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60 invert brightness-0"
-              />
-            </div>
-          ))}
+        <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="overflow-hidden px-8 py-2 relative z-0 select-none">
+          <div
+            ref={tickerRef}
+            className="flex whitespace-nowrap gap-8 sm:gap-12 md:gap-16 will-change-transform select-none"
+            style={{ transform: "translateX(0px)", transition: "none" }}
+          >
+            {[...logos, ...logos].map((logo, index) => (
+              <div key={`ticker-${index}`} className="flex-shrink-0 flex items-center justify-center select-none">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className={`object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60 invert brightness-0 ${logo.className ?? ''}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-
         {/* Right fade mask */}
-        <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-black/80 to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none"></div>
       </div>
     </section>
   );

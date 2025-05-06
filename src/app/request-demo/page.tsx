@@ -73,15 +73,48 @@ export default function RequestDemoPage() {
     setErrorMessage(null);
     
     try {
-      // Simulate API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Split name into first and last name (best effort)
+      const nameParts = name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      // Prepare the payload for the API
+      const payload = {
+        firstName,
+        lastName,
+        email,
+        company: organization,
+        title: jobTitle,
+        message: helpRequest
+      };
+
+      // Send data to the API endpoint
+      const response = await fetch('/api/request-demo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit request');
+      }
       
       // Success
+      const data = await response.json();
+      if (data.calendly) {
+        window.location.assign(data.calendly);
+        return;
+      }
       setIsSubmitted(true);
       resetForm();
     } catch (error) {
       // Handle error
-      setErrorMessage("An unexpected error occurred. Please try again.");
+      setErrorMessage(typeof error === 'string' ? error : 
+                     (error instanceof Error ? error.message : 
+                     "An unexpected error occurred. Please try again."));
     } finally {
       setIsSubmitting(false);
     }

@@ -133,7 +133,7 @@
 }
 
 .animate-ticker {
-  animation: ticker 40s linear infinite;
+  animation: ticker 26.67s linear infinite;
 }
 
 @keyframes twinkle {

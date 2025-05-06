@@ -13,7 +13,10 @@ const logos = [
   { src: "/logos/palantir.svg", alt: "Palantir Logo", width: 200, height: 100 }, 
   { src: "/logos/uc-berkeley.svg", alt: "UC Berkeley Logo", width: 170, height: 85 },
   { src: "/logos/nvidia-logo.svg", alt: "Nvidia Logo", width: 160, height: 80 },
-
+  { src: "/logos/apple_logo.svg", alt: "Apple Logo", width: 200, height: 200 },
+  { src: "/logos/tesla.svg", alt: "Tesla Logo", width: 200, height: 100 },
+  { src: "/logos/rivian.svg", alt: "Rivian Logo", width: 200, height: 100 },
+  { src: "/logos/cruise.svg", alt: "Cruise Logo", width: 200, height: 100 },
   // Add any other logos here if needed
 ];
 

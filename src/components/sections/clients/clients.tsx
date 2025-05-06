@@ -17,7 +17,7 @@ const logos = [
   { src: "/logos/rivian.svg", alt: "Rivian Logo", width: 200, height: 100 },
   { src: "/logos/intel.svg", alt: "Intel Logo", width: 110, height: 55 },
   { src: "/logos/anyscale.svg", alt: "Anyscale Logo", width: 200, height: 100 },
-  { src: "/logos/cruise.svg", alt: "Cruise Logo", width: 140, height: 70 },
+  { src: "/logos/cruise.svg", alt: "Cruise Logo", width: 140, height: 70, className: "pb-1" },
   // Add any other logos here if needed
 ];
 

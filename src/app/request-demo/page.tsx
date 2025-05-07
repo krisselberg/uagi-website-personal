@@ -28,7 +28,6 @@ export default function RequestDemoPage() {
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isJobTitleValid, setIsJobTitleValid] = useState(true);
   const [isOrganizationValid, setIsOrganizationValid] = useState(true);
-  const [canSubmit, setCanSubmit] = useState(false);
   
   // Update validation whenever relevant fields change
   const validateForm = () => {
@@ -38,13 +37,6 @@ export default function RequestDemoPage() {
       setIsJobTitleValid(jobTitle.trim() !== '');
       setIsOrganizationValid(organization.trim() !== '');
     }
-    
-    const isValid = name.trim() !== '' && 
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && 
-                    jobTitle.trim() !== '' && 
-                    organization.trim() !== '';
-    
-    setCanSubmit(isValid);
   };
   
   const resetForm = () => {
@@ -60,12 +52,15 @@ export default function RequestDemoPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // Trigger validation
     setShouldValidate(true);
-    validateForm();
-    
-    // Check if form is valid
-    if (!canSubmit) {
+    const isValid =
+      name.trim() !== '' &&
+      /^[^\s@]+@[^\s@]+$/.test(email) &&
+      email.includes('.') &&
+      jobTitle.trim() !== '' &&
+      organization.trim() !== '';
+    if (!isValid) {
+      validateForm();
       return;
     }
   
@@ -85,7 +80,8 @@ export default function RequestDemoPage() {
         email,
         company: organization,
         title: jobTitle,
-        message: helpRequest
+        message: helpRequest,
+        source
       };
 
       // Send data to the API endpoint

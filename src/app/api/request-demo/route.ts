@@ -1,24 +1,29 @@
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 
-const sheetId = process.env.GOOGLE_SHEETS_ID;
+const sheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
 const calendlyUrl = 'https://calendly.com/universalagi/15min';
-const serviceAccountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-const privateKey = process.env.GOOGLE_PRIVATE_KEY;
+const serviceAccountEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
+const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
 
 function getAuth() {
   return new google.auth.JWT(
-    process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
     undefined,
-    process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
     ['https://www.googleapis.com/auth/spreadsheets']
   );
+}
+
+function formatDateForSheets(date: Date): string {
+  const pad = (n: number) => n.toString().padStart(2, '0');
+  return `${pad(date.getMonth() + 1)}/${pad(date.getDate())}/${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { firstName, lastName, email, company, title, message } = body;
+    const { firstName, lastName, email, company, title, message, source } = body;
 
     if (!firstName || !lastName || !email || !company || !title) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
@@ -33,13 +38,14 @@ export async function POST(req: NextRequest) {
       const sheets = google.sheets({ version: 'v4', auth });
       const tabName = 'Demo Requests';
       const values = [[
-        new Date().toISOString(),
+        formatDateForSheets(new Date()),
         firstName,
         lastName,
         email,
         company,
         title,
-        message || ''
+        message || '',
+        source || ''
       ]];
       try {
         await sheets.spreadsheets.values.append({
@@ -64,8 +70,8 @@ export async function POST(req: NextRequest) {
             range: `${tabName}!A1`,
             valueInputOption: 'RAW',
             requestBody: { values: [[
-              'Timestamp', 'First Name', 'Last Name', 'Email', 'Company', 'Title', 'Message']
-            ]}
+              'Timestamp', 'First Name', 'Last Name', 'Email', 'Company', 'Title', 'Message', 'How did you hear about us?'
+            ]]}
           });
           await sheets.spreadsheets.values.append({
             spreadsheetId: sheetId,

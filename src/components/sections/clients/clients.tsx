@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { useEffect, useRef, useState } from "react";
+import { useEffect as useDevEffect } from "react";
 
 // Array of logo paths
 const logos = [
+  { src: "/logos/cruise.svg", alt: "Cruise Logo", width: 140, height: 70, className: "pb-1" },
+  { src: "/logos/anyscale.svg", alt: "Anyscale Logo", width: 200, height: 100 },
   { src: "/logos/Princeton.svg", alt: "Princeton Logo", width: 160, height: 80 },
   { src: "/logos/openai.svg", alt: "OpenAI Logo", width: 180, height: 90 },
   { src: "/logos/apple_logo.svg", alt: "Apple Logo", width: 180, height: 90, className: "pb-2" },
@@ -16,64 +19,44 @@ const logos = [
   { src: "/logos/uc-berkeley.svg", alt: "UC Berkeley Logo", width: 170, height: 85 },
   { src: "/logos/rivian.svg", alt: "Rivian Logo", width: 200, height: 100 },
   { src: "/logos/intel.svg", alt: "Intel Logo", width: 110, height: 55 },
-  { src: "/logos/anyscale.svg", alt: "Anyscale Logo", width: 200, height: 100 },
-  { src: "/logos/cruise.svg", alt: "Cruise Logo", width: 140, height: 70, className: "pb-1" },
   // Add any other logos here if needed
 ];
 
 export function BuiltByLeaders() {
-  const [direction, setDirection] = useState<1 | -1>(1);
   const tickerRef = useRef<HTMLDivElement>(null);
-  const frameRef = useRef<number>(0);
-  const posRef = useRef<number>(0);
-  const lastTimeRef = useRef<number>(performance.now());
-  const cycleWidthRef = useRef<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [logosWidth, setLogosWidth] = useState(0);
+  const [direction, setDirection] = useState<1 | -1>(1);
+  const posRef = useRef(0);
+  const lastTimeRef = useRef(performance.now());
 
-  // Calculate the exact width of one logo cycle (first N logos)
+  // Measure the width of a single set of logos
   useEffect(() => {
+    if (!tickerRef.current) return;
+    // Temporarily render one set to measure
     const ticker = tickerRef.current;
-    if (!ticker) return;
-    // Find the width of the first N logos (half the children)
-    const children = Array.from(ticker.children).slice(0, ticker.children.length / 2) as HTMLElement[];
-    if (children.length === 0) return;
-    const first = children[0];
-    const last = children[children.length - 1];
-    // Use offsetLeft/offsetWidth for true layout width
-    const left = first.offsetLeft;
-    const right = last.offsetLeft + last.offsetWidth;
-    cycleWidthRef.current = right - left;
+    setLogosWidth(ticker.scrollWidth / 2);
   }, [logos.length]);
 
   useEffect(() => {
-    const ticker = tickerRef.current;
-    if (!ticker) return;
+    if (!logosWidth) return;
     let running = true;
-    // Use the calculated cycle width
-    const getCycleWidth = () => cycleWidthRef.current;
-    const pxPerSec = getCycleWidth() / 40;
-
+    const pxPerSec = logosWidth / 40;
     function animate(now: number) {
       if (!running) return;
       const dt = (now - lastTimeRef.current) / 1000;
       lastTimeRef.current = now;
       posRef.current += direction * pxPerSec * dt;
-      const cycleWidth = getCycleWidth();
-      // Loop seamlessly, always in the correct direction
-      if (direction === 1 && posRef.current > cycleWidth) posRef.current -= cycleWidth;
-      if (direction === -1 && posRef.current < 0) posRef.current += cycleWidth;
-      // Clamp to [0, cycleWidth) for pixel-perfect loop
-      if (posRef.current >= cycleWidth) posRef.current = 0;
-      if (posRef.current < 0) posRef.current = cycleWidth - 1;
-      if (ticker) ticker.style.transform = `translateX(${-posRef.current}px)`;
-      frameRef.current = requestAnimationFrame(animate);
+      if (posRef.current >= logosWidth) posRef.current -= logosWidth;
+      if (posRef.current < 0) posRef.current += logosWidth;
+      if (tickerRef.current) {
+        tickerRef.current.style.transform = `translateX(${-posRef.current}px)`;
+      }
+      requestAnimationFrame(animate);
     }
-    frameRef.current = requestAnimationFrame(animate);
-    return () => {
-      running = false;
-      cancelAnimationFrame(frameRef.current);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [direction, logos.length]);
+    requestAnimationFrame(animate);
+    return () => { running = false; };
+  }, [logosWidth, direction]);
 
   function handleDirection(dir: 'left' | 'right') {
     setDirection(dir === 'left' ? 1 : -1);
@@ -111,23 +94,26 @@ export function BuiltByLeaders() {
         </button>
         {/* Left fade mask */}
         <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none"></div>
-        <div className="overflow-hidden px-8 py-2 relative z-0 select-none">
+        <div ref={containerRef} className="overflow-hidden px-8 py-2 relative z-0 select-none">
           <div
             ref={tickerRef}
             className="flex whitespace-nowrap gap-8 sm:gap-12 md:gap-16 will-change-transform select-none"
             style={{ transform: "translateX(0px)", transition: "none" }}
           >
-            {[...logos, ...logos].map((logo, index) => (
-              <div key={`ticker-${index}`} className="flex-shrink-0 flex items-center justify-center select-none">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={logo.width}
-                  height={logo.height}
-                  className={`object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60 invert brightness-0 ${logo.className ?? ''}`}
-                />
-              </div>
-            ))}
+            {/* Render two sets of logos for seamless looping */}
+            {[0, 1].map(setIdx =>
+              logos.map((logo, index) => (
+                <div key={`ticker-${setIdx}-${index}`} className="flex-shrink-0 flex items-center justify-center select-none">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width}
+                    height={logo.height}
+                    className={`object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60 invert brightness-0 ${logo.className ?? ''}`}
+                  />
+                </div>
+              ))
+            )}
           </div>
         </div>
         {/* Right fade mask */}

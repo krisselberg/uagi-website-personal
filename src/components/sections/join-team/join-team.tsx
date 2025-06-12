@@ -120,7 +120,7 @@ export function JoinTeam() {
                             Join Our Team
                         </h2>
                         <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12">
-                            We're building something transformative in San Francisco and seeking exceptional AI engineering talent to join us in-office.
+                            We're building something transformative in San Francisco and seeking exceptional AI engineering talent to join us in-office
                         </p>
                     </FadeInSection>
                 </div>

@@ -2,6 +2,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { HeroSection } from "@/components/sections/hero/hero";
 import { BuiltByLeaders } from "@/components/sections/clients/clients";
 import { Capabilities } from "@/components/sections/capabilities/capabilities"
+import { References } from "@/components/sections/references/references";
 import { PastAdopters } from "@/components/sections/past-adopters/past-adopters";
 import { JoinTeam } from "@/components/sections/join-team/join-team";
 import { Metadata } from "next";
@@ -31,10 +32,10 @@ export default function Home() {
   return (
     <PageLayout>
       <HeroSection />
+      <Capabilities />
       <BuiltByLeaders />
       <PastAdopters />
-
-      <Capabilities />
+      <References />
       <JoinTeam />
     </PageLayout>
   );

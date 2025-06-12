@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export function Capabilities(){
     // State to control the width of the cards section - matches Join Team section
@@ -17,8 +18,8 @@ export function Capabilities(){
                     <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             ),
-            title: "Speed",
-            description: "Production-ready AI in weeks."
+            title: "Rapid Deployment",
+            description: "Go from concept to production in weeks, not months. Our platform is built for fast, scalable, and reliable AI deployments."
         },
         {
             icon: (
@@ -29,8 +30,8 @@ export function Capabilities(){
                     <path d="M16 3.13C17.7699 3.58317 19.0078 5.17594 19.0078 7.005C19.0078 8.83406 17.7699 10.4268 16 10.88" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             ),
-            title: "Talent",
-            description: "World-class AI experts."
+            title: "Expert-Driven",
+            description: "Our team is augmented by world-class AI experts dedicated to your success, from integration to ongoing optimization."
         },
         {
             icon: (
@@ -38,8 +39,8 @@ export function Capabilities(){
                     <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             ),
-            title: "Security",
-            description: "Enterprise-grade security."
+            title: "Secure by Design",
+            description: "Built for the most demanding security and compliance requirements, ensuring your data remains protected."
         }
     ];
 
@@ -47,9 +48,12 @@ export function Capabilities(){
         <section className="w-full py-16 sm:py-24 md:py-32 relative z-10">
             <div className="container px-4 sm:px-6 md:px-8 relative z-10">
                 <FadeInSection>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-center mb-8 sm:mb-12 md:mb-16">
-                    Accelerate Secure AI Adoption
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-center mb-4 sm:mb-6">
+                        A Unified Platform for Secure AI
                     </h2>
+                    <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto text-center mb-10 sm:mb-16">
+                        Our integrated platform provides the infrastructure, talent, and security to deploy production-grade AI applications on your most sensitive data
+                    </p>
                 </FadeInSection>
 
                 <div className="relative w-full mx-auto mb-10 sm:mb-16 overflow-visible">
@@ -83,6 +87,20 @@ export function Capabilities(){
                         </div>
                     </div>
                 </div>
+                <FadeInSection>
+                    <div className="text-center">
+                        <Button
+                            className="rounded-full text-black/90 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
+                            style={{
+                                background: "linear-gradient(to right, #B3EBF2, #7dd8e6)",
+                                boxShadow:
+                                "0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)",
+                            }}
+                        >
+                            <a href="/request-demo">Learn More</a>
+                        </Button>
+                    </div>
+                </FadeInSection>
             </div>
         </section>
     );

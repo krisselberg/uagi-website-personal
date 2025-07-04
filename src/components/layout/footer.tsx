@@ -31,7 +31,7 @@ export function Footer() {
                   <svg className="w-4 h-4 md:w-5 md:h-5 text-[#B3EBF2] mr-2 md:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                   </svg>
-                  <span className="text-sm md:text-base text-gray-400">contact@universalagi.ai</span>
+                  <span className="text-sm md:text-base text-gray-400">contact@universalagi.com</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-4 h-4 md:w-5 md:h-5 text-[#B3EBF2] mr-2 md:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@ export function Footer() {
             <h3 className="text-white font-medium text-base md:text-lg mb-3 md:mb-4">Company</h3>
             <ul className="space-y-2 md:space-y-2">
               <li><Link href="/about" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">About Us</Link></li>
-              <li><Link href="#" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Demo</Link></li>
+              <li><Link href="/request-demo" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Demo</Link></li>
               <li><Link href="/#join-team" className="text-sm md:text-base text-gray-400 hover:text-[#B3EBF2] transition-colors duration-300">Careers</Link></li>
             </ul>
           </div>

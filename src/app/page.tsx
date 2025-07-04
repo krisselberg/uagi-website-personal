@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "UniversalAGI",
     description: "Latest AI Breakthroughs on top of your secure data",
-    url: 'https://universalagi.netlify.app',
+    url: 'https://universalagi.com',
     images: [
       {
         url: "/message_thumbnail.png",

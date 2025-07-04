@@ -38,11 +38,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logos/uagi-icon.svg",
   },
-  metadataBase: new URL('https://universalagi.netlify.app'),
+  metadataBase: new URL('https://universalagi.com'),
   openGraph: {
     title: "UniversalAGI",
     description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
-    url: 'https://universalagi.netlify.app',
+    url: 'https://universalagi.com',
     images: [
       {
         url: "/message_thumbnail.png",
@@ -76,19 +76,19 @@ export default function RootLayout({
         <meta property="og:site_name" content="UniversalAGI" />
         <meta property="og:title" content="UniversalAGI" />
         <meta property="og:description" content="Latest AI Breakthroughs on top of your secure data" />
-        <meta property="og:image" content="https://universalagi.netlify.app/message_thumbnail.png" />
-        <meta property="og:image:secure_url" content="https://universalagi.netlify.app/message_thumbnail.png" />
+        <meta property="og:image" content="https://universalagi.com/message_thumbnail.png" />
+        <meta property="og:image:secure_url" content="https://universalagi.com/message_thumbnail.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="UniversalAGI" />
-        <meta property="og:url" content="https://universalagi.netlify.app" />
+        <meta property="og:url" content="https://universalagi.com" />
         <meta property="og:type" content="website" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="UniversalAGI" />
         <meta name="twitter:description" content="Latest AI Breakthroughs on top of your secure data" />
-        <meta name="twitter:image" content="https://universalagi.netlify.app/message_thumbnail.png" />
+        <meta name="twitter:image" content="https://universalagi.com/message_thumbnail.png" />
       </head>
       <ClientBody>{children}</ClientBody>
     </html>

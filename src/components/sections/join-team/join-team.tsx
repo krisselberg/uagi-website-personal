@@ -107,6 +107,33 @@ export function JoinTeam() {
             </svg>
           ),
           title: "Immigration Support"
+        },
+        {
+          icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6">
+              <path d="M7 17L17 7" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M17 17H7V7" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M8 6L6 8L8 10" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M16 14L18 16L16 18" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="12" cy="12" r="2" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          ),
+          title: "Monthly Commute Stipend"
+        },
+        {
+          icon: (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6">
+              <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M8 14.5C8.5 15.5 10.5 17 12 17C13.5 17 15.5 15.5 16 14.5" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 9H9.01" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 9H15.01" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M12 3V1" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M12 23V21" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M21 12H23" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M1 12H3" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          ),
+          title: "Monthly Wellness/Fitness Stipend"
         }
       ];
       
@@ -216,10 +243,10 @@ export function JoinTeam() {
 
                 {/* Benefits Cards Section */}
                 <FadeInSection delay={150}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+                    <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
                         {benefits.map((benefit, index) => (
                             <FadeInSection key={index} delay={index * 50}>
-                                <div className="group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
+                                <div className="w-full sm:w-[280px] lg:w-[300px] group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
                                     <div className="p-4 sm:p-5 md:p-6">
                                         {benefit.icon}
                                         <h3 className="text-base sm:text-lg md:text-xl font-medium text-white group-hover:text-[#B3EBF2] transition-colors duration-300">

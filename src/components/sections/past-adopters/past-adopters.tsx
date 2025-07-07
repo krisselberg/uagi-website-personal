@@ -14,6 +14,7 @@ interface CardData {
     gradientTo: string;
     accentColor: string;
     iconName: string;
+    link: string;
 }
 
 export function PastAdopters() {
@@ -24,7 +25,7 @@ export function PastAdopters() {
         {
             title: "Enterprise",
             category: "Private Sector",
-            description: "Transforming secure data into powerful business advantages. Your data. Your environment. Our expertise. Proven success with enterprises.",
+            description: "Empowered business teams to turn their ideas into secure, production-ready applications deployed in under 60 minutes—no coding required, with real-time UI previews, live data models, and seamless Salesforce, Slack, and API integrations.",
             caseStudies: [
                 "<strong>Unlock Predictive Insights:</strong> Deploy AI agents to analyze complex datasets, revealing hidden patterns and forecasting future trends.",
                 "<strong>Sharpen Decision-Making:</strong> Convert raw data into actionable intelligence, empowering faster, more strategic business choices.",
@@ -33,12 +34,13 @@ export function PastAdopters() {
             gradientFrom: "blue-500/40",
             gradientTo: "indigo-800/60",
             accentColor: "#4CCDFF",
-            iconName: "building-skyscraper"
+            iconName: "building-skyscraper",
+            link: "/enterprise"
         },
         {
             title: "Government",
             category: "Public Sector",
-            description: "Empowering governments to transform data into smarter decisions. We've enabled public sector organizations streamline operations and make superior policy, HR, financial, and operational choices—all while maximizing existing data assets in secure environments.",
+            description: "Enabled non-technical officials to self-serve insights from air-gapped national data in under one minute—translated plain-English queries into audited SQL and interactive visualizations within a fully on-premise, compliance-driven environment.",
             caseStudies: [
                 "<strong>Generate Actionable Analytics:</strong> Utilize AI agents to process vast government data, extracting clear insights for mission-critical tasks.",
                 "<strong>Boost Operational Efficiency:</strong> Drive significant improvements in resource allocation and process optimization through data-driven intelligence.",
@@ -47,67 +49,71 @@ export function PastAdopters() {
             gradientFrom: "purple-500/40",
             gradientTo: "violet-800/60",
             accentColor: "#C89BFF",
-            iconName: "building-columns"
+            iconName: "building-columns",
+            link: "/government"
         }
     ];
 
     const Card = ({ data }: { data: CardData }) => (
-        <div className="rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 flex flex-col bg-black/80 h-full group backdrop-blur-sm">
-            {/* Image section */}
-            <div className={`aspect-[16/7] relative overflow-hidden bg-gradient-to-br from-${data.gradientFrom} to-${data.gradientTo} flex items-center justify-center`}>
-                {/* Accent colored overlay element */}
-                <div className="absolute inset-0">
-                    <div className="absolute top-0 right-0 w-full h-full overflow-hidden opacity-10">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute -right-20 -top-20 w-[500px] h-[500px]">
-                            <path fill={data.accentColor} d="M45.9,-50.2C58.4,-35.1,66.6,-17.6,67.5,1.4C68.4,20.4,62.1,40.7,48.3,52.6C34.4,64.5,13,68,-5.9,65.3C-24.8,62.6,-41.1,53.7,-52.6,39.9C-64.1,26.1,-70.8,7.4,-68.5,-10.1C-66.2,-27.7,-54.8,-44.1,-40.5,-59.2C-26.2,-74.3,-8.8,-88,4.5,-92.2C17.8,-96.4,35.7,-91.1,45.9,-76.2Z" transform="translate(100 100)" />
-                        </svg>
+        <Link href={data.link} className="block">
+            <div className="rounded-3xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 flex flex-col bg-black/80 h-full group backdrop-blur-sm cursor-pointer
+                hover:shadow-[0_0_0_4px_rgba(255,255,255,0.7),0_0_16px_4px_rgba(255,255,255,0.8)] focus:shadow-[0_0_0_4px_rgba(255,255,255,0.7),0_0_16px_4px_rgba(255,255,255,0.8)]">
+                {/* Image section */}
+                <div className={`aspect-[16/7] relative overflow-hidden bg-gradient-to-br from-${data.gradientFrom} to-${data.gradientTo} flex items-center justify-center`}>
+                    {/* Accent colored overlay element */}
+                    <div className="absolute inset-0">
+                        <div className="absolute top-0 right-0 w-full h-full overflow-hidden opacity-10">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute -right-20 -top-20 w-[500px] h-[500px]">
+                                <path fill={data.accentColor} d="M45.9,-50.2C58.4,-35.1,66.6,-17.6,67.5,1.4C68.4,20.4,62.1,40.7,48.3,52.6C34.4,64.5,13,68,-5.9,65.3C-24.8,62.6,-41.1,53.7,-52.6,39.9C-64.1,26.1,-70.8,7.4,-68.5,-10.1C-66.2,-27.7,-54.8,-44.1,-40.5,-59.2C-26.2,-74.3,-8.8,-88,4.5,-92.2C17.8,-96.4,35.7,-91.1,45.9,-76.2Z" transform="translate(100 100)" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
+                    
+                    {/* Icon */}
+                    <div className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center" style={{backgroundColor: data.accentColor}}>
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                {data.iconName === "building-skyscraper" ? (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                ) : (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                                )}
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    {/* Title overlay with larger size */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full z-10">
+                        <h3 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-2 sm:mb-3 drop-shadow-lg">
+                            {data.title}
+                        </h3>
+                        <div className="text-xs sm:text-sm uppercase tracking-wider font-medium px-3 py-1 sm:px-4 sm:py-1 rounded-full inline-block" style={{backgroundColor: data.accentColor, color: "#000000"}}>
+                            {data.category}
+                        </div>
+                    </div>
+                    
+                    {/* Decorative elements */}
+                    <div className="absolute w-full h-full">
+                        {/* Animated gradient circles */}
+                        <div className="absolute top-[15%] left-[20%] w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 rounded-full opacity-40 blur-2xl animate-pulse" style={{backgroundColor: data.accentColor}}></div>
+                        <div className="absolute bottom-[25%] right-[10%] w-28 sm:w-36 md:w-48 h-28 sm:h-36 md:h-48 rounded-full opacity-30 blur-3xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "1.5s"}}></div>
+                        <div className="absolute top-[60%] left-[60%] w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 rounded-full opacity-20 blur-xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "0.7s"}}></div>
                     </div>
                 </div>
                 
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
-                
-                {/* Icon */}
-                <div className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center" style={{backgroundColor: data.accentColor}}>
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            {data.iconName === "building-skyscraper" ? (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            ) : (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-                            )}
-                        </svg>
+                {/* Text section */}
+                <div className="flex-1 flex flex-col p-5 sm:p-6 md:p-8 bg-[#000000] relative">
+                    {/* Description container without fixed height since we removed the capabilities section */}
+                    <div className="mb-4 sm:mb-6">
+                        <p className="text-gray-300 text-base sm:text-lg">
+                            {data.description}
+                        </p>
                     </div>
-                </div>
-                
-                {/* Title overlay with larger size */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full z-10">
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-2 sm:mb-3 drop-shadow-lg">
-                        {data.title}
-                    </h3>
-                    <div className="text-xs sm:text-sm uppercase tracking-wider font-medium px-3 py-1 sm:px-4 sm:py-1 rounded-full inline-block" style={{backgroundColor: data.accentColor, color: "#000000"}}>
-                        {data.category}
-                    </div>
-                </div>
-                
-                {/* Decorative elements */}
-                <div className="absolute w-full h-full">
-                    {/* Animated gradient circles */}
-                    <div className="absolute top-[15%] left-[20%] w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 rounded-full opacity-40 blur-2xl animate-pulse" style={{backgroundColor: data.accentColor}}></div>
-                    <div className="absolute bottom-[25%] right-[10%] w-28 sm:w-36 md:w-48 h-28 sm:h-36 md:h-48 rounded-full opacity-30 blur-3xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "1.5s"}}></div>
-                    <div className="absolute top-[60%] left-[60%] w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 rounded-full opacity-20 blur-xl animate-pulse" style={{backgroundColor: data.accentColor, animationDelay: "0.7s"}}></div>
                 </div>
             </div>
-            
-            {/* Text section */}
-            <div className="flex-1 flex flex-col p-5 sm:p-6 md:p-8 bg-[#000000] relative">
-                {/* Description container without fixed height since we removed the capabilities section */}
-                <div className="mb-4 sm:mb-6">
-                    <p className="text-gray-300 text-base sm:text-lg">
-                        {data.description}
-                    </p>
-                </div>
-            </div>
-        </div>
+        </Link>
     );
     
     return (
@@ -115,13 +121,13 @@ export function PastAdopters() {
             <div className="container px-4 sm:px-6 md:px-8 relative z-10">
                 <FadeInSection>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 text-center">
-                        Our Clients
+                        Case Studies
                     </h2>
                 </FadeInSection>
                 
                 <FadeInSection delay={200}>
                     <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto text-center mb-10 sm:mb-16">
-                    White glove experience for our partners across sectors
+                    Real-world success stories from our enterprise and government partners
                     </p>
                 </FadeInSection>
                 

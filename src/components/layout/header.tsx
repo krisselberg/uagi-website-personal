@@ -79,6 +79,9 @@ export function Header() {
           <Link href="/about" className="text-gray-100 hover:text-white transition-colors text-base text-xl font-regular">
             About Us
           </Link>
+          <Link href="/case-studies" className="text-gray-100 hover:text-white transition-colors text-base text-xl font-regular">
+            Case Studies
+          </Link>
           {/* <Link href="/request-demo" className="text-gray-100 hover:text-white transition-colors text-base text-xl font-regular">
             Demo
           </Link> */}
@@ -99,11 +102,11 @@ export function Header() {
             About Us
           </Link>
           <Link 
-            href="/request-demo" 
+            href="/case-studies" 
             className="text-gray-100 hover:text-white transition-colors text-lg py-2 font-semibold border-b border-gray-800"
             onClick={() => setIsMenuOpen(false)}
           >
-            Demo
+            Case Studies
           </Link>
           <Link 
             href="/#join-team" 

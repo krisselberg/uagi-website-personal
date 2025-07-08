@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
           <FadeInSection>
             <Card className="group rounded-2xl border border-gray-800 hover:border-gray-700 backdrop-blur-sm bg-black/40 transition-all duration-500 p-8 md:p-12 mx-auto overflow-hidden">
                              <div className="prose prose-invert prose-lg max-w-none text-gray-200">
-            <p className="text-lg mb-6"><strong>Last Updated:</strong> December 20, 2024</p>
+            <p className="text-lg mb-6"><strong>Last Updated:</strong> July 7, 2025</p>
           
           <p>This Privacy Notice describes how UniversalAGI, Inc. (" <strong>we</strong>", " <strong>us</strong>", " <strong>our</strong>") collects, uses and discloses information about you when you use our website (universalagi.com), applications, services, tools and features, or otherwise interact with us (collectively, the " <strong>Services</strong>"). For the purposes of this Privacy Notice, " <strong>you</strong>" and " <strong>your</strong>" means you as the user of the Services. Please note that this Privacy Notice does not apply to information that our customers upload to or otherwise process using our Services. To learn more about how such information is collected, used, and disclosed, please contact the relevant UniversalAGI customer.</p>
           

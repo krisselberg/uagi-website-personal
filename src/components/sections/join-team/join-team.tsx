@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { useState } from "react";
+import { Car, Dumbbell, Utensils } from "lucide-react";
 
 export function JoinTeam() {
     // State to control the width of the "We Invest in People" card - adjust this value to change width
@@ -88,12 +89,7 @@ export function JoinTeam() {
         },
         {
           icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6">
-              <path d="M20 4L18 12H16L14 4" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M17 12V20" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M7 4V20" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M7 4C7 4 4 5 4 8C4 11 7 12 7 12" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <Utensils className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6 text-[#7dd8e6]" />
           ),
           title: "Lunch & Dinner in office"
         },
@@ -110,28 +106,13 @@ export function JoinTeam() {
         },
         {
           icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6">
-              <path d="M7 17L17 7" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M17 17H7V7" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M8 6L6 8L8 10" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M16 14L18 16L16 18" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="12" cy="12" r="2" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <Car className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6 text-[#7dd8e6]" />
           ),
           title: "Monthly Commute Stipend"
         },
         {
           icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6">
-              <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M8 14.5C8.5 15.5 10.5 17 12 17C13.5 17 15.5 15.5 16 14.5" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M9 9H9.01" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M15 9H15.01" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 3V1" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 23V21" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M21 12H23" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M1 12H3" stroke="#7dd8e6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <Dumbbell className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mb-4 sm:mb-5 md:mb-6 text-[#7dd8e6]" />
           ),
           title: "Monthly Wellness/Fitness Stipend"
         }

@@ -36,7 +36,12 @@ export const metadata: Metadata = {
   title: "UniversalAGI",
   description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
   icons: {
-    icon: "/logos/uagi-icon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logos/uagi-icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/logos/uagi-icon.svg",
   },
   metadataBase: new URL('https://universalagi.com'),
   openGraph: {
@@ -72,6 +77,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
+        {/* Favicon tags for better compatibility */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/logos/uagi-icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logos/uagi-icon.svg" />
         {/* WhatsApp/Facebook-specific meta tags */}
         <meta property="og:site_name" content="UniversalAGI" />
         <meta property="og:title" content="UniversalAGI" />

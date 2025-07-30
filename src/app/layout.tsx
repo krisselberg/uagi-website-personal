@@ -48,23 +48,14 @@ export const metadata: Metadata = {
     title: "UniversalAGI",
     description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
     url: 'https://universalagi.com',
-    images: [
-      {
-        url: "/message_thumbnail.png",
-        width: 1200,
-        height: 630,
-        alt: "UniversalAGI",
-      }
-    ],
     siteName: "UniversalAGI",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "UniversalAGI",
     description: "UniversalAGI is the AI platform built to meet the standards of the world's leading enterprises.",
-    images: ["/message_thumbnail.png"],
     creator: "@UniversalAGI",
   },
 };
@@ -85,19 +76,12 @@ export default function RootLayout({
         <meta property="og:site_name" content="UniversalAGI" />
         <meta property="og:title" content="UniversalAGI" />
         <meta property="og:description" content="Latest AI Breakthroughs on top of your secure data" />
-        <meta property="og:image" content="https://universalagi.com/message_thumbnail.png" />
-        <meta property="og:image:secure_url" content="https://universalagi.com/message_thumbnail.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="UniversalAGI" />
         <meta property="og:url" content="https://universalagi.com" />
         <meta property="og:type" content="website" />
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="UniversalAGI" />
         <meta name="twitter:description" content="Latest AI Breakthroughs on top of your secure data" />
-        <meta name="twitter:image" content="https://universalagi.com/message_thumbnail.png" />
       </head>
       <ClientBody>{children}</ClientBody>
     </html>

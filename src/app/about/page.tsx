@@ -75,7 +75,7 @@ export default function AboutPage() {
         <div className="container max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-4xl font-medium mb-10 text-center text-white">
-              Our Investors 
+              Our Investors and Advisors
             </h2>
             
             <div className="mt-8 text-center">
@@ -106,6 +106,21 @@ export default function AboutPage() {
                 <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
                   <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
                   <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Swift Ventures</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap justify-center items-center gap-8 mt-8">
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Jared Kushner</span>
+                </div>
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Ivanka Trump</span>
+                </div>
+                <div className="w-48 h-24 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 flex items-center justify-center group">
+                  <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <span className="text-white text-lg font-medium relative z-10 group-hover:text-[#B3EBF2] transition-colors duration-300">Luis Videgaray Caso</span>
                 </div>
               </div>
             </div>

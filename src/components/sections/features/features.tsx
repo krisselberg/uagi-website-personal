@@ -5,7 +5,7 @@ export function FeaturesSection(){
     return(
     <section className="w-full py-16 bg-secondary/0">
         <div className="container">
-        <h2 className="text-3xl font-medium mb-16 text-center">Unlock the Latest Enterprise AI</h2>
+        <h2 className="text-3xl font-normal mb-16 text-center">Unlock the Latest Enterprise AI</h2>
 
         <div className="flex justify-center">
             <div className="bg-black/70 rounded-xl overflow-hidden w-full mx-auto p-6">
@@ -18,7 +18,7 @@ export function FeaturesSection(){
                         <path d="M12 8H12.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </div>
-                    <h3 className="text-xl font-medium mb-2">Enterprise-Grade Security</h3>
+                    <h3 className="text-xl font-normal mb-2">Enterprise-Grade Security</h3>
                     <p className="text-muted-foreground">
                         Robust, industry-standard protection with zero training on your data.
                     </p>
@@ -30,7 +30,7 @@ export function FeaturesSection(){
                         <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </div>
-                    <h3 className="text-xl font-medium mb-2">Advanced Insights</h3>
+                    <h3 className="text-xl font-normal mb-2">Advanced Insights</h3>
                     <p className="text-muted-foreground"> Have a conversation with your data and unlock meaningful insights.
                     </p>
                     </div>
@@ -44,7 +44,7 @@ export function FeaturesSection(){
                         <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </div>
-                    <h3 className="text-xl font-medium mb-2">Organization-Specific Models</h3>
+                    <h3 className="text-xl font-normal mb-2">Organization-Specific Models</h3>
                     <p className="text-muted-foreground">
                         High-performing custom models built for your specific use-case.
                     </p>

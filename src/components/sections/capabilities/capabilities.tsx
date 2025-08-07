@@ -47,7 +47,7 @@ export function Capabilities(){
     return (
         <div className="container px-4 sm:px-6 md:px-8 relative z-10">
                 <FadeInSection>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-center mb-4 sm:mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-center mb-4 sm:mb-6">
                         A Unified Platform for Secure AI
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto text-center mb-10 sm:mb-16">
@@ -69,7 +69,7 @@ export function Capabilities(){
                                     <FadeInSection key={index} delay={index * 200}>
                                         <div className="group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/30 p-6 flex flex-col">
                                             <div className="mb-4">
-                                                <h3 className="text-2xl font-medium mb-1 text-white flex items-center">
+                                                <h3 className="text-2xl font-normal mb-1 text-white flex items-center">
                                                     <span className="mr-3 flex items-center">
                                                         {benefit.icon}
                                                     </span>

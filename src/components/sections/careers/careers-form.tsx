@@ -115,13 +115,13 @@ export function CareersForm() {
               <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <h3 className="text-3xl font-medium mb-4 text-white group-hover:text-[#B3EBF2] transition-colors duration-300">Application Submitted</h3>
+                            <h3 className="text-3xl font-normal mb-4 text-white group-hover:text-[#B3EBF2] transition-colors duration-300">Application Submitted</h3>
           <p className="text-gray-300 text-lg mb-8 max-w-xl mx-auto group-hover:text-gray-200 transition-colors duration-300">
             Thank you for your interest in joining our team. We'll review your application and get back to you soon.
           </p>
           <Button 
             onClick={handleSubmitAnother} 
-            className="rounded-full text-black/90 text-base px-6 py-3 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
+            className="rounded-full text-black/90 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
             style={{ 
               background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
               boxShadow: '0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)'
@@ -222,7 +222,7 @@ export function CareersForm() {
           <button
             type="submit"
             disabled={isSubmitting || !canSubmit}
-            className="rounded-full text-black/90 text-base px-6 py-3 font-semibold border-0 transition-all duration-300 hover:shadow-glow flex items-center justify-center"
+            className="rounded-full text-black/90 text-xs sm:text-base md:text-lg px-3 py-5 sm:px-5 md:px-6 sm:py-5 md:py-6 font-semibold border-0 transition-all duration-300 hover:shadow-glow flex items-center justify-center"
             style={{ 
               background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
               boxShadow: '0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)'

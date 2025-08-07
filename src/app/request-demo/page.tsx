@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
+
 import { PageLayout } from "@/components/layout/page-layout";
 
 
@@ -122,55 +122,82 @@ export default function RequestDemoPage() {
   
   return (
     <PageLayout>
-      <main className="flex min-h-screen flex-col bg-transparent relative pt-20">
-        {/* Background for the entire page */}
-        <div className="absolute inset-0 w-full h-full bg-black"></div>
-        
-        {/* Header Section */}
-        <section className="w-full py-24 relative z-10">
-          <div className="container relative max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-normal mb-6 text-white">
+      {/* Background for the entire page */}
+      <div className="fixed inset-0 w-full h-screen -z-10 bg-black"></div>
+      
+      <section className="w-full relative py-16 sm:py-20 md:py-24 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-[0.02]" 
+               style={{
+                 backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+                 backgroundSize: '50px 50px'
+               }}>
+          </div>
+          
+          {/* Gradient orbs */}
+          <div className="absolute top-20 left-20 w-96 h-96 bg-[#B3EBF2]/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#7dd8e6]/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          {/* Header Section */}
+          <div className="text-center mb-16 sm:mb-20 md:mb-24">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
+              <svg className="w-4 h-4 text-[#B3EBF2] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              <span className="text-sm font-medium text-white/80">Get Started</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-6 leading-tight">
               Request a Demo
             </h1>
             
-            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              Experience our enterprise-grade AI solutions tailored to your business needs
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Experience our enterprise-grade AI solutions—
+              <span className="text-[#B3EBF2]"> tailored to your business needs </span>
+              with personalized demonstrations and expert guidance.
             </p>
           </div>
-        </section>
 
-        {/* Form Section */}
-        <section className="py-12 relative z-10">
-          <div className="container max-w-3xl mx-auto">
+          {/* Form Section */}
+          <div className="max-w-4xl mx-auto">
             {isSubmitted ? (
-              <Card className="group rounded-2xl border border-gray-800 hover:border-gray-700 backdrop-blur-sm bg-black/40 transition-all duration-500 p-16 w-full mx-auto overflow-hidden">
-                <div className="text-center py-12">
+              <div className="relative group">
+                <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/10 p-12 sm:p-16 text-center transition-all duration-700 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
                   <div className="w-20 h-20 bg-[#B3EBF2]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#B3EBF2]">
                       <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <h3 className="text-3xl font-medium mb-4 text-white group-hover:text-[#B3EBF2] transition-colors duration-300">
+                  <h3 className="text-3xl sm:text-4xl font-normal mb-4 text-white group-hover:text-[#B3EBF2] transition-colors duration-300">
                     Request Submitted
                   </h3>
-                  <p className="text-gray-300 text-lg mb-8 max-w-xl mx-auto group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-gray-300 text-lg sm:text-xl mb-8 max-w-xl mx-auto leading-relaxed">
                     Thank you for your interest in our services. Our team will contact you shortly to schedule your personalized demo.
                   </p>
                   <Button 
                     onClick={handleRequestAnother} 
-                    className="rounded-full text-black/90 text-base px-6 py-3 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
+                    className="rounded-full text-black/90 text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 font-semibold border-0 transition-all duration-300 hover:shadow-glow hover:scale-105"
                     style={{ 
                       background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
                       boxShadow: '0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)'
                     }}
                   >
                     Request Another Demo
+                    <svg className="w-4 h-4 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
                   </Button>
                 </div>
-              </Card>
+                {/* Background Glow Effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#B3EBF2]/20 via-transparent to-[#B3EBF2]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-sm -z-10"></div>
+              </div>
             ) : (
-              <Card className="group rounded-2xl border border-gray-800 hover:border-gray-700 backdrop-blur-sm bg-black/40 transition-all duration-500 p-8 md:p-12 w-full mx-auto overflow-hidden">
-                <form className="space-y-8" onSubmit={handleSubmit}>
+              <div className="relative group">
+                <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/10 p-8 sm:p-12 transition-all duration-700 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                   {errorMessage && (
                     <div className="bg-red-900/30 border border-red-500/50 text-red-100 py-3 px-4 rounded-md mb-6">
                       {errorMessage}
@@ -189,7 +216,7 @@ export default function RequestDemoPage() {
                         setName(e.target.value);
                         if (shouldValidate) validateForm();
                       }}
-                      className={`py-4 bg-black/60 border-gray-700 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 ${!isNameValid && shouldValidate ? 'border-red-500' : ''}`}
+                      className={`py-4 bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 transition-all duration-300 ${!isNameValid && shouldValidate ? 'border-red-500' : ''}`}
                     />
                     {!isNameValid && shouldValidate && (
                       <p className="text-red-400 text-sm mt-1">Please enter your name</p>
@@ -209,7 +236,7 @@ export default function RequestDemoPage() {
                         setEmail(e.target.value);
                         if (shouldValidate) validateForm();
                       }}
-                      className={`py-4 bg-black/60 border-gray-700 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 ${!isEmailValid && shouldValidate ? 'border-red-500' : ''}`}
+                      className={`py-4 bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 transition-all duration-300 ${!isEmailValid && shouldValidate ? 'border-red-500' : ''}`}
                     />
                     {!isEmailValid && shouldValidate && (
                       <p className="text-red-400 text-sm mt-1">Please enter a valid business email</p>
@@ -228,7 +255,7 @@ export default function RequestDemoPage() {
                         setJobTitle(e.target.value);
                         if (shouldValidate) validateForm();
                       }}
-                      className={`py-4 bg-black/60 border-gray-700 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 ${!isJobTitleValid && shouldValidate ? 'border-red-500' : ''}`}
+                      className={`py-4 bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 transition-all duration-300 ${!isJobTitleValid && shouldValidate ? 'border-red-500' : ''}`}
                     />
                     {!isJobTitleValid && shouldValidate && (
                       <p className="text-red-400 text-sm mt-1">Please enter your job title</p>
@@ -247,7 +274,7 @@ export default function RequestDemoPage() {
                         setOrganization(e.target.value);
                         if (shouldValidate) validateForm();
                       }}
-                      className={`py-4 bg-black/60 border-gray-700 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 ${!isOrganizationValid && shouldValidate ? 'border-red-500' : ''}`}
+                      className={`py-4 bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-[#B3EBF2]/70 focus:ring-[#B3EBF2]/20 transition-all duration-300 ${!isOrganizationValid && shouldValidate ? 'border-red-500' : ''}`}
                     />
                     {!isOrganizationValid && shouldValidate && (
                       <p className="text-red-400 text-sm mt-1">Please enter your organization</p>
@@ -262,7 +289,7 @@ export default function RequestDemoPage() {
                       id="source"
                       value={source}
                       onChange={(e) => setSource(e.target.value)}
-                      className="flex w-full rounded-md border border-gray-700 bg-black/60 px-3 py-4 text-base shadow-sm transition-colors placeholder:text-gray-500 focus:outline-none focus:border-[#B3EBF2]/70 focus:ring-1 focus:ring-[#B3EBF2]/20"
+                      className="flex w-full rounded-md border border-white/20 bg-white/5 text-white px-3 py-4 text-base shadow-sm transition-all duration-300 focus:outline-none focus:border-[#B3EBF2]/70 focus:ring-1 focus:ring-[#B3EBF2]/20"
                     >
                       <option value="" disabled>Select an option</option>
                       <option value="web_search">Web search</option>
@@ -283,15 +310,15 @@ export default function RequestDemoPage() {
                       placeholder="Tell us more about your needs and what you're looking to achieve with our solution"
                       value={helpRequest}
                       onChange={(e) => setHelpRequest(e.target.value)}
-                      className="flex min-h-32 w-full rounded-md border border-gray-700 bg-black/60 px-3 py-3 text-base shadow-sm transition-colors placeholder:text-gray-500 focus:outline-none focus:border-[#B3EBF2]/70 focus:ring-1 focus:ring-[#B3EBF2]/20"
+                      className="flex min-h-32 w-full rounded-md border border-white/20 bg-white/5 text-white placeholder:text-gray-400 px-3 py-3 text-base shadow-sm transition-all duration-300 focus:outline-none focus:border-[#B3EBF2]/70 focus:ring-1 focus:ring-[#B3EBF2]/20 resize-none"
                     ></textarea>
                   </div>
                   
-                  <div className="flex justify-center mt-12 w-full">
+                  <div className="flex justify-center mt-8 w-full">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="rounded-full text-black/90 text-base px-6 py-3 font-semibold border-0 transition-all duration-300 hover:shadow-glow flex items-center justify-center"
+                      className="rounded-full text-black/90 text-sm sm:text-base px-8 sm:px-12 py-3 sm:py-4 font-semibold border-0 transition-all duration-300 hover:shadow-glow hover:scale-105 flex items-center justify-center min-w-[160px]"
                       style={{ 
                         background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
                         boxShadow: '0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)'
@@ -303,16 +330,24 @@ export default function RequestDemoPage() {
                           Submitting...
                         </>
                       ) : (
-                        'Request Demo'
+                        <>
+                          Request Demo
+                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                          </svg>
+                        </>
                       )}
                     </button>
                   </div>
-                </form>
-              </Card>
+                  </form>
+                </div>
+                {/* Background Glow Effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#B3EBF2]/20 via-transparent to-[#B3EBF2]/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-sm -z-10"></div>
+              </div>
             )}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </PageLayout>
   );
 } 

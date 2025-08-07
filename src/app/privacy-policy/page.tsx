@@ -37,11 +37,11 @@ export default function PrivacyPolicyPage() {
           
           <p>At UniversalAGI, we believe that you are in control of your information, and we are committed to privacy. Please read this Privacy Notice carefully. By using any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Notice. If you do not agree to this Privacy Notice, please do not use or access the Services.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">1. CHANGES TO THIS PRIVACY NOTICE</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">1. CHANGES TO THIS PRIVACY NOTICE</h2>
           
           <p>We may modify this Privacy Notice from time to time, in which case we will update the "Last Updated" date at the top of this Privacy Notice. If we make material changes to how we use or disclose information we collect, we will use reasonable efforts to notify you (such as by emailing you at the last email address you provided us, by posting notice of such changes on the Services, or by other means consistent with applicable law) and will take additional steps as required by applicable law. If you do not agree to any updates to this Privacy Notice, please do not continue using or accessing the Services.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">2. COLLECTION AND USE OF INFORMATION</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">2. COLLECTION AND USE OF INFORMATION</h2>
           
           <p>When you use or access the Services, we collect certain categories of information about you from a variety of sources.</p>
           
@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
           
           <p>Finally, we may deidentify your information such that it cannot reasonably be used to infer information about you or otherwise be linked to you (or we may collect information that has already been deidentified), and we may use such deidentified information for any purpose.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">3. DISCLOSURE OF YOUR INFORMATION</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">3. DISCLOSURE OF YOUR INFORMATION</h2>
           
           <p>We may disclose your information for legitimate purposes subject to this Privacy Notice, including the following categories of third parties:</p>
           
@@ -96,25 +96,25 @@ export default function PrivacyPolicyPage() {
           
           <p>We may also disclose your information as needed to comply with applicable law or any obligations thereunder or to cooperate with law enforcement, judicial orders, and regulatory inquiries, to enforce any applicable terms of service, and to ensure the safety and security of our business, employees, and users.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">4. SOCIAL FEATURES</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">4. SOCIAL FEATURES</h2>
           
           <p>Certain features of the Services allow you to initiate interactions between the Services and third-party services or platforms, such as social networks (" <strong>Social Features</strong>"). Social Features include features that allow you to access our pages on third-party platforms, and from there "like" or "share" our content. Use of Social Features may allow a third party to collect and/or use your information. If you use Social Features, information you post or make accessible may be publicly displayed by the third-party service. Both we and the third party may have access to information about you and your use of both the Services and the third-party service. For more information, see the section below, <em>Third Party Websites and Links</em>.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">5. THIRD PARTY WEBSITES AND LINKS</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">5. THIRD PARTY WEBSITES AND LINKS</h2>
           
           <p>We may provide links to third-party websites or platforms. If you follow links to sites or platforms that we do not control and are not affiliated with us, you should review the applicable privacy notice, policies and other terms. We are not responsible for the privacy or security of, or information found on, these sites or platforms. Information you provide on public or semi-public venues, such as third-party social networking platforms, may also be viewable by other users of the Services and/or users of those third-party platforms without limitation as to its use. Our inclusion of such links does not, by itself, imply any endorsement of the content on such platforms or of their owners or operators.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">6. CHILDREN'S PRIVACY</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">6. CHILDREN'S PRIVACY</h2>
           
           <p>Our Services are not intended for children, and we do not seek or knowingly collect any personal information about children. If we become aware that we have unknowingly collected information about a child, in particular any child under 13 years of age, we will make commercially reasonable efforts to delete such information from our database. If you are the parent or guardian of a child under 13 years of age who has provided us with their personal information, you may contact us using the below information to request that it be deleted.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">7. DATA SECURITY AND RETENTION</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">7. DATA SECURITY AND RETENTION</h2>
           
           <p>Despite our reasonable efforts to protect your information, no security measures are impenetrable, and we cannot guarantee "perfect security." Any information you send to us electronically, while using the Services or otherwise interacting with us, may not be secure while in transit. We recommend that you do not use unsecure channels to send us sensitive or confidential information.</p>
           
           <p>We retain your information for as long as is reasonably necessary for the purposes specified in this Privacy Notice. When determining the length of time to retain your information, we consider various criteria, including whether we need the information to continue to provide you the Services, resolve a dispute, enforce our contractual agreements, prevent harm, promote safety, security and integrity, or protect ourselves, including our rights, property or products.</p>
           
-          <h2 className="text-3xl font-medium mt-10 mb-6 text-white">8. HOW TO CONTACT US</h2>
+          <h2 className="text-3xl font-normal mt-10 mb-6 text-white">8. HOW TO CONTACT US</h2>
           
           <p>Should you have any questions about our privacy practices or this Privacy Notice, please email us at <a href="mailto:contact@universalagi.com" className="text-[#B3EBF2] hover:text-[#7dd8e6]">contact@universalagi.com</a> or contact us at our San Francisco, California office.</p>
               </div>

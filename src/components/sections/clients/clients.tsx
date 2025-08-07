@@ -65,7 +65,7 @@ export function BuiltByLeaders() {
       {/* Keep the header in container */}
       <div className="container px-4 sm:px-6 md:px-8 mb-10 sm:mb-16">
         <FadeInSection>
-          <h3 className="text-4xl sm:text-5xl md:text-6xl font-medium text-center text-black/90 leading-tight">
+          <h3 className="text-4xl sm:text-5xl md:text-6xl font-normal text-center text-black/90 leading-tight">
             Built by AI Leaders from Silicon Valley <br /> and Top Reseach Institutions
           </h3>
         </FadeInSection>
@@ -133,7 +133,7 @@ export function BuiltByLeaders() {
                 height={logo.height}
                 draggable={false}
                 onDragStart={(e) => e.preventDefault()}
-                className="object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60"
+                className="object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60 filter grayscale brightness-0"
               />
             </div>
           ))}

@@ -45,8 +45,7 @@ export function Capabilities(){
     ];
 
     return (
-        <section className="w-full py-16 sm:py-24 md:py-32 relative z-10">
-            <div className="container px-4 sm:px-6 md:px-8 relative z-10">
+        <div className="container px-4 sm:px-6 md:px-8 relative z-10">
                 <FadeInSection>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-center mb-4 sm:mb-6">
                         A Unified Platform for Secure AI
@@ -102,6 +101,5 @@ export function Capabilities(){
                     </div>
                 </FadeInSection>
             </div>
-        </section>
     );
 }

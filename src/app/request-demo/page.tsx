@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { PageLayout } from "@/components/layout/page-layout";
-import { SpaceBackground } from "@/components/animations/SpaceBackground";
+
 
 export default function RequestDemoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -123,10 +123,8 @@ export default function RequestDemoPage() {
   return (
     <PageLayout>
       <main className="flex min-h-screen flex-col bg-transparent relative pt-20">
-        {/* Space background for the entire page */}
-        <div className="absolute inset-0 w-full h-full">
-          <SpaceBackground starCount={300} speed={0.5} />
-        </div>
+        {/* Background for the entire page */}
+        <div className="absolute inset-0 w-full h-full bg-black"></div>
         
         {/* Header Section */}
         <section className="w-full py-24 relative z-10">

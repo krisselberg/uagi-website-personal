@@ -119,128 +119,162 @@ export function JoinTeam() {
       ];
       
     return (
-        <section id="join-team" className="w-full py-16 sm:py-24 md:py-32 lg:py-40 relative overflow-hidden z-10">
-            {/* Content */}
-            <div className="container max-w-6xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-                <div className="text-center mb-8 sm:mb-12 md:mb-16">
-                    <FadeInSection>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 md:mb-8 text-white">
-                            Join Our Team
-                        </h2>
-                        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12">
-                            We're building something transformative in San Francisco and seeking exceptional AI engineering talent to join us in-office
-                        </p>
-                    </FadeInSection>
-                </div>
+        <div id="join-team" className="w-full relative z-10 py-20 bg-black">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeInSection>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center text-white mb-6">
+            Join Our Team
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto text-center mb-16">
+            We're building something transformative in San Francisco and seeking
+            exceptional AI engineering talent to join us in-office.
+          </p>
+        </FadeInSection>
 
-                {/* Mission Statement Section with Quotes integrated - Moved to be before benefits cards */}
-                <FadeInSection delay={100}>
-                    <div className="relative w-full mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-24 overflow-visible">
-                        <div className="flex justify-center relative">
-                            <div style={{ 
-                                width: investCardWidth, 
-                                maxWidth: "130%",
-                                position: "relative",
-                                left: "50%",
-                                transform: "translateX(-50%)"
-                            }} className="overflow-visible">
-                                <div className="group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
-                                    <div className="p-6 sm:p-8 md:p-10 text-center">
-                                        <div className="mb-5 sm:mb-6 md:mb-8 inline-block">
-                                            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-[#7dd8e6]/20 flex items-center justify-center mx-auto">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#B3EBF2] w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
-                                                    <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                                    <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                                    <path d="M23 21V19C22.9986 17.1771 21.765 15.5857 20 15.13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                                    <path d="M16 3.13C17.7699 3.58317 19.0078 5.17594 19.0078 7.005C19.0078 8.83406 17.7699 10.4268 16 10.88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-white group-hover:text-[#7dd8e6] transition-colors duration-300 mb-3 sm:mb-4 md:mb-6">
-                                            We Invest in People
-                                        </h3>
-                                        <p className="text-base sm:text-lg md:text-xl text-gray-300 w-full leading-relaxed mb-8 md:mb-10">
-                                            We create an environment where individuals thrive, developing the skills to become exceptional founders and leaders. Here, you'll have the freedom to explore multiple roles, expanding your expertise across disciplines while accelerating your professional growth.
-                                        </p>
-
-                                        {/* Quotes Section integrated inside the card */}
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 rounded-xl bg-black/20 overflow-hidden">
-                                            <div className="flex flex-col px-5 py-5 h-full relative">
-                                                <div>
-                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#7dd8e6] mb-3 opacity-80" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
-                                                    </svg>
-                                                    <p className="text-sm sm:text-base text-gray-300">
-                                                        "I've learned more in a week at UniversalAGI than I did in years at previous jobs."
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            
-                                            <div className="flex flex-col px-5 py-5 h-full relative">
-                                                <div>
-                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#7dd8e6] mb-3 opacity-80" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
-                                                    </svg>
-                                                    <p className="text-sm sm:text-base text-gray-300">
-                                                        "I was hired based on my potential beyond my existing technical skills. The team actively invests in developing that potential."
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            
-                                            <div className="flex flex-col px-5 py-5 h-full relative">
-                                                <div>
-                                                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#7dd8e6] mb-3 opacity-80" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500zM24.722 7.612c-5.173 2.583-8.722 7.055-8.722 12.388 0 3.895 2.729 7 6.667 7 3.601 0 6.333-2.799 6.333-6.5 0-3.562-2.665-6.5-6-6.5-0.314 0-0.722 0.052-1 0.111 0.667-3.034 4.056-6.396 7-7.611v-2.389c-1.463 0-3.381 0.653-4.278 1.500z"></path>
-                                                    </svg>
-                                                    <p className="text-sm sm:text-base text-gray-300">
-                                                        "At UniversalAGI, I've developed my skills beyond the purely technical, moving towards leadership roles."
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </FadeInSection>
+                <FadeInSection delay={200}>
+          <div className="bg-gray-900 rounded-3xl p-8 sm:p-12 mb-16">
+            <div className="text-center mb-10">
+              <div className="inline-block bg-blue-500/10 p-4 rounded-full mb-4">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-blue-400 w-8 h-8"
+                >
+                  <path
+                    d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M23 21V19C22.9986 17.1771 21.765 15.5857 20 15.13"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16 3.13C17.7699 3.58317 19.0078 5.17594 19.0078 7.005C19.0078 8.83406 17.7699 10.4268 16 10.88"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                We Invest in People
+              </h3>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                We create an environment where individuals thrive, developing the
+                skills to become exceptional founders and leaders.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gray-800 p-6 rounded-xl">
+                <p className="text-gray-300">
+                  "I've learned more in a week at UniversalAGI than I did in years
+                  at previous jobs."
+                </p>
+              </div>
+              <div className="bg-gray-800 p-6 rounded-xl">
+                <p className="text-gray-300">
+                  "I was hired based on my potential beyond my existing technical
+                  skills. The team actively invests in developing that
+                  potential."
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
                 
                 {/* Button moved here, after the People section */}
-                <FadeInSection delay={125}>
-                    <div className="flex justify-center mb-12 sm:mb-16 md:mb-20">
-                        <Link href="https://jobs.ashbyhq.com/universalagi">
-                            <Button 
-                                className="rounded-full text-black/90 text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 font-semibold border-0 transition-all duration-300 hover:shadow-glow"
-                                style={{ 
-                                    background: 'linear-gradient(to right, #B3EBF2, #7dd8e6)',
-                                    boxShadow: '0 4px 14px rgba(123, 216, 230, 0.5), 0 0 20px rgba(179, 235, 242, 0.3)'
-                                }}
-                            >
-                                Open Roles
-                            </Button>
-                        </Link>
-                    </div>
-                </FadeInSection>
+                <FadeInSection delay={300}>
+          <div className="text-center">
+            <Link href="https://jobs.ashbyhq.com/universalagi">
+              <Button
+                className="
+                  rounded-full 
+                  text-black/90 text-lg sm:text-xl 
+                  px-8 py-6 sm:px-10 sm:py-7 
+                  font-bold 
+                  border-0 
+                  transition-all duration-300 
+                  hover:shadow-glow-lg
+                  transform hover:scale-105
+                "
+                style={{
+                  background:
+                    "linear-gradient(to right, #63b3ed, #4299e1)",
+                  boxShadow:
+                    "0 6px 20px rgba(66, 153, 225, 0.4)",
+                }}
+              >
+                View Open Roles
+              </Button>
+            </Link>
+          </div>
+        </FadeInSection>
 
-                {/* Benefits Cards Section */}
-                <FadeInSection delay={150}>
-                    <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
-                        {benefits.map((benefit, index) => (
-                            <FadeInSection key={index} delay={index * 50}>
-                                <div className="w-full sm:w-[280px] lg:w-[300px] group h-full rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:translate-y-[-4px] backdrop-blur-sm bg-black/40 overflow-hidden">
-                                    <div className="p-4 sm:p-5 md:p-6">
-                                        {benefit.icon}
-                                        <h3 className="text-base sm:text-lg md:text-xl font-medium text-white group-hover:text-[#B3EBF2] transition-colors duration-300">
-                                            {benefit.title}
-                                        </h3>
-                                    </div>
-                                </div>
-                            </FadeInSection>
-                        ))}
-                    </div>
-                </FadeInSection>
-                
-            </div>
-        </section>
-    );
+        <div className="text-center mb-12">
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Our Benefits
+          </h3>
+          <p className="text-lg text-gray-300">
+            We offer a comprehensive benefits package to support our team.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {benefits.map((benefit, index) => (
+            <FadeInSection key={index} delay={index * 100}>
+              <div className="bg-gray-900 p-6 rounded-xl h-full flex flex-col items-center text-center">
+                <div className="text-blue-400 mb-4">{benefit.icon}</div>
+                <h4 className="text-lg font-semibold text-white">
+                  {benefit.title}
+                </h4>
+              </div>
+            </FadeInSection>
+          ))}
+        </div>
+
+        <FadeInSection delay={300}>
+          <div className="text-center">
+            <Link href="https://jobs.ashbyhq.com/universalagi">
+              <Button
+                className="
+                  rounded-full 
+                  text-black/90 text-lg sm:text-xl 
+                  px-8 py-6 sm:px-10 sm:py-7 
+                  font-bold 
+                  border-0 
+                  transition-all duration-300 
+                  hover:shadow-glow-lg
+                  transform hover:scale-105
+                "
+                style={{
+                  background:
+                    "linear-gradient(to right, #63b3ed, #4299e1)",
+                  boxShadow:
+                    "0 6px 20px rgba(66, 153, 225, 0.4)",
+                }}
+              >
+                View Open Roles
+              </Button>
+            </Link>
+          </div>
+        </FadeInSection>
+      </div>
+    </div>
+  );
 } 

@@ -61,11 +61,11 @@ export function BuiltByLeaders() {
   }, []);
 
   return (
-    <section className="w-full py-16 sm:py-24 md:py-32 overflow-hidden relative z-10">
+    <div className="w-full overflow-hidden relative z-10">
       {/* Keep the header in container */}
       <div className="container px-4 sm:px-6 md:px-8 mb-10 sm:mb-16">
         <FadeInSection>
-          <h3 className="text-4xl sm:text-5xl md:text-6xl font-medium text-center text-white/90 leading-tight">
+          <h3 className="text-4xl sm:text-5xl md:text-6xl font-medium text-center text-black/90 leading-tight">
             Built by AI Leaders from Silicon Valley <br /> and Top Reseach Institutions
           </h3>
         </FadeInSection>
@@ -74,7 +74,7 @@ export function BuiltByLeaders() {
       {/* Ticker now completely outside container */}
       <div className="relative w-screen overflow-hidden">
         {/* Left fade mask */}
-        <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
 
         <div
           ref={containerRef}
@@ -133,15 +133,15 @@ export function BuiltByLeaders() {
                 height={logo.height}
                 draggable={false}
                 onDragStart={(e) => e.preventDefault()}
-                className="object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60 invert brightness-0"
+                className="object-contain max-h-full max-w-[100px] sm:max-w-[130px] md:max-w-full opacity-60"
               />
             </div>
           ))}
         </div>
 
         {/* Right fade mask */}
-        <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 w-16 sm:w-24 md:w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
       </div>
-    </section>
+    </div>
   );
 }

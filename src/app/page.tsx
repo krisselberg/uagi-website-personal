@@ -23,12 +23,24 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <PageLayout>
-      <HeroSection />
-      <Capabilities />
-      <BuiltByLeaders />
-      <PastAdopters />
-      <References />
-      <JoinTeam />
+      <section className="min-h-screen bg-white flex items-center justify-center">
+        <HeroSection />
+      </section>
+      <section className="min-h-screen bg-black text-white flex items-center justify-center">
+        <Capabilities />
+      </section>
+      <section className="min-h-screen bg-white flex items-center justify-center">
+        <BuiltByLeaders />
+      </section>
+      <section className="min-h-screen bg-black text-white flex items-center justify-center">
+        <PastAdopters />
+      </section>
+      <section className="min-h-screen bg-white flex items-center justify-center">
+        <References />
+      </section>
+      <section className="min-h-screen bg-black text-white flex items-center justify-center">
+        <JoinTeam />
+      </section>
     </PageLayout>
   );
 }

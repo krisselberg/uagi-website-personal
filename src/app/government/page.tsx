@@ -1,7 +1,7 @@
 'use client'
 import { PageLayout } from "@/components/layout/page-layout";
 import { FadeInSection } from "@/components/animations/FadeInSection";
-import { SpaceBackground } from "@/components/animations/SpaceBackground";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,9 +24,8 @@ const otherCaseStudies = [
 export default function GovernmentPage() {
   return (
     <PageLayout>
-      <div className="fixed inset-0 w-full h-screen -z-10">
-        <SpaceBackground starCount={300} speed={0.5} />
-      </div>
+      {/* Background for the entire page */}
+      <div className="fixed inset-0 w-full h-screen -z-10 bg-black"></div>
       <section className="w-full min-h-screen py-12 md:py-20 relative z-10 bg-black/80">
         <div className="container mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 px-4 md:px-8">
           {/* Main Content */}

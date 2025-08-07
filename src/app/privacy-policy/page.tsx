@@ -2,7 +2,6 @@
 
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { PageLayout } from "@/components/layout/page-layout";
-import { SpaceBackground } from "@/components/animations/SpaceBackground";
 import { Card } from "@/components/ui/card";
 
 export default function PrivacyPolicyPage() {
@@ -10,7 +9,7 @@ export default function PrivacyPolicyPage() {
     <PageLayout>
       {/* Space background for the entire page */}
       <div className="fixed inset-0 w-full h-screen">
-        <SpaceBackground starCount={300} speed={0.5} />
+        
       </div>
       
       {/* Header Section */}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { FadeInSection } from "@/components/animations/FadeInSection";
-import { SpaceBackground } from "@/components/animations/SpaceBackground";
+
 
 const caseStudies = [
   {
@@ -37,9 +37,8 @@ const caseStudies = [
 export default function CaseStudiesPage() {
   return (
     <PageLayout>
-      <div className="fixed inset-0 w-full h-screen -z-10">
-        <SpaceBackground starCount={300} speed={0.5} />
-      </div>
+      {/* Background for the entire page */}
+      <div className="fixed inset-0 w-full h-screen -z-10 bg-black"></div>
       <section className="w-full min-h-screen py-16 md:py-24 relative z-10 bg-black/80">
         <div className="container mx-auto px-4 md:px-8">
           <FadeInSection>

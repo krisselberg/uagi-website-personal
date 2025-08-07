@@ -2,7 +2,7 @@
 
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { PageLayout } from "@/components/layout/page-layout";
-import { SpaceBackground } from "@/components/animations/SpaceBackground";
+
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 
@@ -33,10 +33,8 @@ export default function AboutPage() {
 
   return (
     <PageLayout>
-      {/* Space background for the entire page */}
-      <div className="fixed inset-0 w-full h-screen">
-        <SpaceBackground starCount={300} speed={0.5} />
-      </div>
+      {/* Background for the entire page */}
+      <div className="fixed inset-0 w-full h-screen bg-black"></div>
       
       {/* Header Section */}
       <section className="w-full py-16 relative z-10">

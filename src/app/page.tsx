@@ -26,8 +26,23 @@ export default function Home() {
       <section className="min-h-screen bg-white flex items-center justify-center">
         <HeroSection />
       </section>
-      <section className="min-h-screen bg-black text-white flex items-center justify-center">
-        <Capabilities />
+      <section className="min-h-screen relative text-white flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/uagi_video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        {/* Content */}
+        <div className="relative z-20 w-full">
+          <Capabilities />
+        </div>
       </section>
       <section className="min-h-screen bg-white flex items-center justify-center">
         <BuiltByLeaders />

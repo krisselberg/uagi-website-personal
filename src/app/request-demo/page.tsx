@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import { PageNavigationArrow } from "@/components/ui/page-navigation-arrow";
 import { PageLayout } from "@/components/layout/page-layout";
 
 
@@ -347,6 +347,10 @@ export default function RequestDemoPage() {
             )}
           </div>
         </div>
+      </section>
+      
+      <section className="bg-black">
+        <PageNavigationArrow />
       </section>
     </PageLayout>
   );

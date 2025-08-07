@@ -1,5 +1,6 @@
 'use client'
 import { PageLayout } from "@/components/layout/page-layout";
+import { PageNavigationArrow } from "@/components/ui/page-navigation-arrow";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 
 import Image from "next/image";
@@ -143,6 +144,10 @@ export default function EnterprisePage() {
             </div>
           </aside>
         </div>
+      </section>
+      
+      <section className="bg-black">
+        <PageNavigationArrow />
       </section>
     </PageLayout>
   );

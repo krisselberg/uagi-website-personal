@@ -2,6 +2,7 @@
 
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { PageLayout } from "@/components/layout/page-layout";
+import { PageNavigationArrow } from "@/components/ui/page-navigation-arrow";
 import { Card } from "@/components/ui/card";
 
 export default function PrivacyPolicyPage() {
@@ -121,6 +122,10 @@ export default function PrivacyPolicyPage() {
             </Card>
           </FadeInSection>
         </div>
+      </section>
+      
+      <section className="bg-black">
+        <PageNavigationArrow />
       </section>
     </PageLayout>
   );

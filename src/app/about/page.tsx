@@ -2,6 +2,7 @@
 
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { PageLayout } from "@/components/layout/page-layout";
+import { PageNavigationArrow } from "@/components/ui/page-navigation-arrow";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -262,6 +263,10 @@ export default function AboutPage() {
             </div>
           </FadeInSection>
         </div>
+      </section>
+      
+      <section className="bg-black">
+        <PageNavigationArrow />
       </section>
     </PageLayout>
   );

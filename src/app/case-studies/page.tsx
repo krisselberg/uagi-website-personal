@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
+import { PageNavigationArrow } from "@/components/ui/page-navigation-arrow";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 
 interface CaseStudy {
@@ -231,6 +232,10 @@ export default function CaseStudiesPage() {
               </div>
           </FadeInSection>
         </div>
+      </section>
+      
+      <section className="bg-black">
+        <PageNavigationArrow />
       </section>
     </PageLayout>
   );

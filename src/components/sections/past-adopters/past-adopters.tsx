@@ -161,12 +161,6 @@ export function PastAdopters() {
                 {/* Header Section */}
                 <div className="text-center mb-16 sm:mb-20 md:mb-24">
                     <FadeInSection>
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
-                            <svg className="w-4 h-4 text-[#B3EBF2] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span className="text-sm font-medium text-white/80">Proven Results</span>
-                        </div>
                         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-6 leading-tight">
                             Case Studies
                         </h2>

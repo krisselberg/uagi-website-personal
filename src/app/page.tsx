@@ -48,9 +48,6 @@ export default function Home() {
       <section id="join-team" className="min-h-screen bg-black text-white flex items-center justify-center">
         <JoinTeam />
       </section>
-      <section className="bg-black">
-        <PageNavigationArrow />
-      </section>
     </PageLayout>
   );
 }

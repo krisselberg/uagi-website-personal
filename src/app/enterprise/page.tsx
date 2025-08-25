@@ -13,7 +13,7 @@ const otherCaseStudies = [
       "Enabled non-technical officials to self-serve insights from air-gapped national data in under one minute—translated plain-English queries into audited SQL and interactive visualizations within a fully on-premise, compliance-driven environment.",
     link: "/government",
     chip: {
-      text: "Government",
+      text: "Public Sector",
       bg: "bg-[#e3fbe3]",
       textColor: "text-[#059669]",
     },

@@ -25,35 +25,21 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <PageLayout>
-      <section id="hero" className="h-screen bg-white flex items-center justify-center relative -mt-20">
+      <section id="hero" className="h-screen bg-black flex items-center justify-center relative -mt-20 overflow-hidden">
         <HeroSection />
-        <SectionNavigationArrow targetSectionId="capabilities" sectionTitle="Secure AI Platform" theme="light" />
-      </section>
-      <section id="capabilities" className="min-h-screen relative text-white flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/uagi_video.mp4" type="video/mp4" />
-        </video>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
-        {/* Content */}
-        <div className="relative z-20 w-full">
-          <Capabilities />
-        </div>
         <SectionNavigationArrow targetSectionId="clients" sectionTitle="AI Leaders" theme="dark" />
       </section>
       <section id="clients" className="min-h-screen bg-white flex items-center justify-center relative">
         <BuiltByLeaders />
-        <SectionNavigationArrow targetSectionId="case-studies" sectionTitle="Case Studies" theme="light" />
+        <SectionNavigationArrow targetSectionId="capabilities" sectionTitle="Secure AI Platform" theme="light" />
+      </section>
+      <section id="capabilities" className="min-h-screen relative text-white flex items-center justify-center overflow-hidden">
+        <Capabilities />
+        <SectionNavigationArrow targetSectionId="case-studies" sectionTitle="Case Studies" theme="dark" />
       </section>
       <section id="case-studies" className="min-h-screen bg-black text-white flex items-center justify-center">
         <PastAdopters />
+        <SectionNavigationArrow targetSectionId="references" sectionTitle="References" theme="dark" />
       </section>
       <section id="references" className="min-h-screen bg-white flex items-center justify-center relative">
         <References />

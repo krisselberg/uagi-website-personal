@@ -4,7 +4,7 @@ import { FadeInSection } from "@/components/animations/FadeInSection";
 import YouTube from "react-youtube";
 
 export function References() {
-    const videoIds = ["DI-LKs3GpeE", "JuBDhM01vN0"];
+    const videoIds = ["DI-LKs3GpeE", "JuBDhM01vN0", "P0K4RPl92yI"];
 
     const opts = {
         height: '100%',

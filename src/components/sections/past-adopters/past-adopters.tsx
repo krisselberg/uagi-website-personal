@@ -20,7 +20,7 @@ interface CardData {
 export function PastAdopters() {
     const cards = [
         {
-            title: "Enterprise",
+            title: "Private Sector",
             category: "Fortune 100 Company",
             description: "Empowered business teams to turn their ideas into secure, production-ready applications deployed in under 60 minutes—no coding required, with real-time UI previews, live data models, and seamless integrations.",
             highlights: [
@@ -38,7 +38,7 @@ export function PastAdopters() {
             ]
         },
         {
-            title: "Government",
+            title: "Public Sector",
             category: "National Security Agency",
             description: "Enabled non-technical officials to self-serve insights from air-gapped national data in under one minute—translated plain-English queries into audited SQL and interactive visualizations within a fully compliant environment.",
             highlights: [

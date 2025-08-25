@@ -13,7 +13,7 @@ const otherCaseStudies = [
       "Empowered business teams to turn their ideas into secure, production-ready applications deployed in under 60 minutes—no coding required, with real-time UI previews, live data models, and seamless Salesforce, Slack, and API integrations.",
     link: "/enterprise",
     chip: {
-      text: "Enterprise",
+      text: "Private Sector",
       bg: "bg-[#e3f4fd]",
       textColor: "text-[#2563eb]",
     },

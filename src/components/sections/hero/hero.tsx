@@ -1,19 +1,33 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { BeyondEarth } from "@/components/sections/beyond-earth";
 
 export function HeroSection() {
   return (
-    <div className="container flex flex-col items-center justify-center relative z-10 pt-12 sm:pt-16 md:pt-24">
+    <>
+      {/* Earth Background */}
+      <div className="absolute inset-0 z-0">
+        <BeyondEarth />
+      </div>
+      
+      {/* Content */}
+      <div className="container flex flex-col items-center justify-center relative z-10 pt-12 sm:pt-16 md:pt-24">
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 sm:mb-8 md:mb-10 max-w-6xl mx-auto text-center text-black transition-all duration-1000 transform opacity-100 translate-y-0`}
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 sm:mb-8 md:mb-10 max-w-6xl mx-auto text-center text-white transition-all duration-1000 transform opacity-75 translate-y-0`}
+          style={{
+            textShadow: "0 1px 1px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4)"
+          }}
         >
           AI Agents for Enterprise and Government
         </h1>
         <p
-          className={`text-base sm:text-xl md:text-2xl text-black mb-8 sm:mb-10 max-w-6xl mx-auto text-center transition-all duration-1000 transform opacity-70 translate-y-0`}
-          style={{ transitionDelay: "300ms" }}
+          className={`text-base sm:text-xl md:text-2xl text-white mb-8 sm:mb-10 max-w-6xl mx-auto text-center transition-all duration-1000 transform opacity-60 translate-y-0`}
+          style={{ 
+            transitionDelay: "300ms",
+            textShadow: "0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4)"
+          }}
         >
-          Latest AI Breakthroughs on top of your secure data
+          UniversalAGI is the forward-deployed AI lab for your mission critical challenges
         </p>
         <div
           className={`flex flex-row gap-3 sm:gap-4 mb-16 sm:mb-20 transition-all duration-1000 transform px-4 sm:px-0 opacity-100 translate-y-0`}
@@ -34,6 +48,7 @@ export function HeroSection() {
           </Button>
         </div>
       </div>
+    </>
   );
 }
 

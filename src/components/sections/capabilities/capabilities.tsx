@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Mercury } from "@/components/sections/mercury";
 
 export function Capabilities(){
     // State to control the width of the cards section - matches Join Team section
@@ -45,12 +46,25 @@ export function Capabilities(){
     ];
 
     return (
-        <div className="container px-4 sm:px-6 md:px-8 relative z-10">
+        <>
+            {/* Mercury Background */}
+            <div className="absolute inset-0 z-0">
+                <Mercury />
+            </div>
+            
+            {/* Content */}
+            <div className="container px-4 sm:px-6 md:px-8 relative z-10">
                 <FadeInSection>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-center mb-4 sm:mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-center mb-4 sm:mb-6"
+                        style={{
+                            textShadow: "0 1px 1px rgba(0, 0, 0, 0.9), 0 4px 8px rgba(0, 0, 0, 0.7), 0 8px 16px rgba(0, 0, 0, 0.5)"
+                        }}>
                         A Unified Platform for Secure AI
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto text-center mb-10 sm:mb-16">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-100 max-w-3xl mx-auto text-center mb-10 sm:mb-16"
+                        style={{
+                            textShadow: "0 1px 2px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.5)"
+                        }}>
                         Our integrated platform provides the infrastructure, talent, and security to deploy production-grade AI applications on your most sensitive data
                     </p>
                 </FadeInSection>
@@ -101,5 +115,6 @@ export function Capabilities(){
                     </div>
                 </FadeInSection>
             </div>
+        </>
     );
 }

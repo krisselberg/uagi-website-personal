@@ -144,12 +144,6 @@ export default function RequestDemoPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           {/* Header Section */}
           <div className="text-center mb-16 sm:mb-20 md:mb-24">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
-              <svg className="w-4 h-4 text-[#B3EBF2] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-              </svg>
-              <span className="text-sm font-medium text-white/80">Get Started</span>
-            </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-6 leading-tight">
               Request a Demo
             </h1>
